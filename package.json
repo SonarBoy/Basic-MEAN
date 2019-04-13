@@ -1,0 +1,25 @@
+{
+  "name": "basic-mean",
+  "version": "1.0.0",
+  "description": "basic example of node web server with express and mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonarBoy/Basic-MEAN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SonarBoy/Basic-MEAN/issues"
+  },
+  "homepage": "https://github.com/SonarBoy/Basic-MEAN#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "fontawesome": "^5.6.3",
+    "jquery": "^3.4.0",
+    "popper.js": "^1.15.0"
+  }
+}
