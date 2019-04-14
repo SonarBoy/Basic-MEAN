@@ -1,7 +1,7 @@
 "use.strict";
 
 //Self-executing anonymous function
-// IIFE -- Immediately Invoked.
+//IIFE -- Immediately Invoked.
 (function(){
 
 	//use let instead of var because otherwise
@@ -10,7 +10,12 @@
 	let basic = 0;
 
 	function Start(){
-		console.log(`App Started...${basic}`);
+
+		//If you add the %c symbol in the new formatted ES6 string 
+		// you can specify css for the console.
+		//NOTE: PLEASE USE THIS FOR DEBUGGING!
+		console.log(`%c App Started...${basic} Test` , 
+			"font-size: 10px; color: blue; bg-color: red;");
 	}
 
 
