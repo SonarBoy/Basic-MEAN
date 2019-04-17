@@ -1,0 +1,21 @@
+Response Method	Description
+
+res.download()	Prompt a file to be downloaded.
+res.end()	End the response process.
+res.json()	Send a JSON response.
+res.jsonp()	Send a JSON response with JSONP support.
+res.redirect()	Redirect a request.
+res.render()	Render a view template. draws view
+res.send()	Send a response of various types.
+res.sendFile()	Send a file as an octet stream.
+res.sendStatus()	Set the response status code and send its string representation as the response body.
+
+app.route()
+You can create chainable route handlers for a route path by using app.route(). 
+Because the path is specified at a single location, creating modular routes is helpful, as is reducing redundancy 
+and typos. For more information about routes, see: Router() documentation.
+
+
+router.use()
+Uses the specified middleware function or functions, with optional mount path path, that defaults to “/”.
+This method is similar to app.use(). A simple example and use case is described below. See app.use() for more information

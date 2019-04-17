@@ -1,0 +1,16 @@
+{
+  "name": "basic-express",
+  "version": "1.0.0",
+  "description": "express tutorials",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.13.4",
+    "express": "^4.16.4"
+  }
+}
