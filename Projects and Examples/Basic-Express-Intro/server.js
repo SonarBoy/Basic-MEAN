@@ -23,9 +23,6 @@ server.listen(portNumber,hostName,() =>{
 
 //Simple Express routing examples
 
-//using custom created route
-app.get('/birds',birds);
-
 app.get('/',function (request,response){
     response.send('<h2>Home Page</h2>');
 });
@@ -45,6 +42,10 @@ app.get('/Services',function (request,response){
 app.get('/Contact',function (request,response){
     response.send('<h2>Contact</h2>');
 });
+
+//using custom created route
+app.get('/birds',birds);
+
 
 //You can have More than one callback function can handle a route 
 //(make sure you specify the next object). For example:

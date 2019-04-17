@@ -1,8 +1,14 @@
+
+//Object Oriented Style Interface
 interface Greeter{
     saysHello(): string;
 }
 
+
+//Module or group of objects 
 module objects {
+
+ //Abstract class that you cannot implement like java   
  abstract class Person {
     //Private
     private _age_num: number;
@@ -37,6 +43,8 @@ module objects {
 
     }
 
+    //Internal Sets and Gets did not work
+    //TRY CHANGING THIS APRIL 16 2019
     public ReturnName(): string{
         return this._name_string;
     }
@@ -49,7 +57,7 @@ module objects {
 
 }
 
-
+//EXPORT NEEDS TO BE ADDED FOR USER COMPONENT USE.!!
 export class Employee extends Person{
 
     private emp_Title: string;
@@ -104,6 +112,7 @@ export class Employee extends Person{
 }
 }
 
+//SIMPLE TEST RUN
 let best: objects.Employee;
     
     best = new objects.Employee("Joshua", 28, "Cyber Intelligence", 54632, 74000);

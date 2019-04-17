@@ -22,6 +22,7 @@
 	window.addEventListener("load",Start);
 
 	//ES6 Syntax
+	// ARROW functions keeks the context of the this from the prior scope
 	window.addEventListener("load",() =>
 		function(){
 			console.log("This is the application!");

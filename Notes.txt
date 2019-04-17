@@ -1,0 +1,12 @@
+CommonJS Standards specify the folloing key components
+when working with modules.
+
+Require(): A method that is used to laod the module into your code.
+
+Exports: An object thats contained in each module and allows you to 
+expose pieces of your code when the module is loaded
+
+module: an object that was originally used to provide metadata information
+about the mdoule. It also contains the pointer of an exports object as a property
+However the popular implementation of the exports object as a stand alone object 
+literally changed the use case of the module object

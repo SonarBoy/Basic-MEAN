@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing -->
+<html itemscope="" itemtype="http://schema.org/QAPage" class="html__responsive"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>node.js - Explanation for what 'DEBUG=myapp:* npm start' is actually doing - Stack Overflow</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="https://stackoverflow.com/opensearch.xml">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing">
+        <meta property="og:site_name" content="Stack Overflow">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="stackoverflow.com">
+        <meta name="twitter:title" property="og:title" itemprop="name" content="Explanation for what &#39;DEBUG=myapp:* npm start&#39; is actually doing">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="The getting started page for the Express application generator (located here) says to start the server by using $ DEBUG=myapp:* npm start if using MacOS or Linux.  
+
+This works fine, but I&#39;m having ">
+        <script src="./buildIssues_files/f.txt"></script><script src="./buildIssues_files/pubads_impl_rendering_2019041101.js"></script><script src="./buildIssues_files/rules-p-c1rF4kxgLUzNc.js" async=""></script><script async="" src="./buildIssues_files/quant.js"></script><script async="" src="./buildIssues_files/beacon.js"></script><script async="" src="./buildIssues_files/analytics.js"></script><script src="./buildIssues_files/jquery.min.js"></script>
+        <script src="./buildIssues_files/stub.en.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="./buildIssues_files/stacks.css">
+    <link rel="stylesheet" type="text/css" href="./buildIssues_files/primary.css">
+
+    
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Explanation for what &#39;DEBUG=myapp:* npm start&#39; is actually doing&#39;" href="https://stackoverflow.com/feeds/question/36240385">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:36240385});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '36240385');
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+        
+        
+
+
+        <script>
+        StackExchange.init({"locale":"en","serverTime":1555523496,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"e941b5cbf1ee4d8a437a67da1130e2db6867aa27a97d57d1d1899e1366b46bed","tid":"ab0b7d61-55fc-481a-0d5e-476c45853c33","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"inline_signup_hero":{"v":"d","g":2}}},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4},"svgIconPath":"https://cdn.sstatic.net/Img/svg-icons","svgIconHash":"6e41a6bc8765"}, {"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"userMessaging":{},"tags":{},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"},"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"paths":{},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"mentions":{"maxNumUsersInDropdown":50},"markdown":{"asteriskIntraWordEmphasis":true},"flags":{"allowRetractingFlags":true},"comments":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"6f81f0bd9830","js/moderator.en.js":"72fec8003166","js/pseudomoderator.en.js":"c0a9a418b269","js/full-anon.en.js":"af15fa7b1fbb","js/full.en.js":"153172d62291","js/wmd.en.js":"203fe9ac3fbe","js/mobile.en.js":"30ceeb5f5bf6","js/help.en.js":"769f1d4dbaab","js/tageditor.en.js":"58dcbe3bac4c","js/tageditornew.en.js":"e92dec2b5ce2","js/inline-tag-editing.en.js":"ce077ca77977","js/revisions.en.js":"db7c23e85c0c","js/review.en.js":"3ac04e9eae71","js/tagsuggestions.en.js":"ddb0e41afe26","js/post-validation.en.js":"1a7f91c8fa5f","js/explore-qlist.en.js":"cd6e5274146c","js/events.en.js":"83f265d0df99","js/keyboard-shortcuts.en.js":"d20289033b9e","js/external-editor.en.js":"2b7327372e32","js/adops.en.js":"22a9bd59b1e9","js/begin-edit-event.en.js":"3238dd301e69","js/stacks-polyfills.en.js":"cbdd06c510b2","js/external-editor.en.js":"2b7327372e32","js/snippet-javascript.en.js":"99b69a27f4b8","js/snippet-javascript-codemirror.en.js":"7a849c545909"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css"><style>body,.top-bar{margin-top:1.9em}</style></noscript>
+    <script async="" src="./buildIssues_files/full-anon.en.js"></script><link rel="stylesheet" href="./buildIssues_files/clc.min.css" type="text/css"><script async="" src="./buildIssues_files/snippet-javascript.en.js"></script><script async="" src="./buildIssues_files/post-validation.en.js"></script><script async="" src="./buildIssues_files/prettify-full.en.js"></script><script async="" src="./buildIssues_files/external-editor.en.js"></script><link rel="preload" href="./buildIssues_files/f(1).txt" as="script"><script type="text/javascript" src="./buildIssues_files/f(1).txt"></script><link rel="preload" href="./buildIssues_files/f(2).txt" as="script"><script type="text/javascript" src="./buildIssues_files/f(2).txt"></script><script src="./buildIssues_files/pubads_impl_2019041101.js" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html"></head>
+        <body class="question-page unified-theme">
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar top-bar__network _fixed">
+    <div class="-container">
+        <div class="-main">
+                <a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" class="left-sidebar-toggle p0 ai-center jc-center js-left-sidebar-toggle"><span class="ps-relative"></span></a>
+                                <a href="https://stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        <span class="-img _glyph">Stack Overflow</span>
+                    </a>
+
+
+
+        </div>
+
+            <form id="search" action="https://stackoverflow.com/search" method="get" class="searchbar js-searchbar " autocomplete="off" role="search">
+                    <div class="ps-relative">
+                        <input name="q" type="text" placeholder="Search…" value="" autocomplete="off" maxlength="240" class="s-input js-search-field ">
+                        <button type="submit" aria-label="Search…" class="s-btn s-btn__primary s-btn__icon btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+                    </div>
+            </form>
+
+        
+
+
+
+
+
+<ol class="-secondary js-secondary-topbar-links drop-icons-responsively user-logged-out the-js-is-handling-responsiveness">
+        <li class="-item searchbar-trigger js-searchbar-trigger"><a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" class="-link"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></a></li>
+            <li class="-item inbox-button-item" data-remove-order="1">
+        <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Recent inbox messages">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item achievements-button-item" data-remove-order="2">
+        <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item help-button-item"><a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+    <li class="-item site-switcher-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 175 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+
+            <li class="-ctas">
+                        <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f36240385%2fexplanation-for-what-debug-myapp-npm-start-is-actually-doing" class="login-link s-btn btn-topbar-clear py8" rel="nofollow">Log In</a>
+                        <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link s-btn s-btn__primary py8 btn-topbar-primary" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Sign Up</a>
+
+            </li>
+
+    <li class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li class="grid">
+                            <div class="fl1">
+            <a href="https://stackoverflow.com/" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-stackoverflow site-icon grid--cell" title="Stack Overflow"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow
+        </span>
+    </a>
+
+    </div>
+    <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                    <a href="https://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+                    </li>
+                    <li class="related-site grid">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://meta.stackoverflow.com/" class="site-link js-gps-track grid gs8 gsx" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-stackoverflowmeta site-icon grid--cell" title="Meta Stack Overflow"></div>
+        <span class="grid--cell fl1">
+            Meta Stack Overflow
+        </span>
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f36240385%2fexplanation-for-what-debug-myapp-npm-start-is-actually-doing" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+            <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                    <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
+                <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm"></div>
+            </div>
+    </li>
+</ol>
+
+    </div>
+</header>
+    <div id="js-gdpr-consent-banner" class="p16 bg-black-700 ff-sans fc-white ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false">
+        <div class="wmx8 mx-auto grid jc-center" role="alertdialog" aria-describedby="notice-message">
+            <div class="grid--cell mr12" aria-label="notice-message">
+                <p class="mb0 lh-lg">
+                    By using our site, you acknowledge that you have read and understand our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">Cookie Policy</a>, <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a>, and our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">Terms of Service</a>.
+                </p>
+            </div>
+            <a class="grid--cell fc-white js-notice-close" aria-label="notice-dismiss">
+                <svg aria-hidden="true" class="svg-icon m0 iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init({ observeSize: true }); });
+        StackExchange.scrollPadding.setPaddingTop(50, 10);     </script>
+
+
+
+    <div id="announcement-banner" class="js-announcement-banner bg-black-700 fc-white ff-sans fs-body2 py2" data-campaign="2019-04-09.dev-survey-2019" data-cookie="notice-dsr" data-expire-date="1556398800000">
+        <div class="grid jc-space-between wmx12 mx-auto px16 py8">
+            <div class="grid--cell mr12">
+                <a class="s-link js-link js-gps-track fw-bold fc-blue-400" href="https://insights.stackoverflow.com/survey/2019?utm_source=so-owned&amp;utm_medium=announcement-banner&amp;utm_campaign=dev-survey-2019" data-ga="[&quot;dev-survey-2019&quot;,&quot;Announcement Banner&quot;,&quot;https://insights.stackoverflow.com/survey/2019?utm_source=so-owned&amp;utm_medium=announcement-banner&amp;utm_campaign=dev-survey-2019&quot;,null,{&quot;dimension4&quot;:&quot;dev-survey-2019&quot;}]" data-gps-track="announcement_banner.click({campaign: &#39;2019-04-09.dev-survey-2019&#39;, location: 2, action: 2})">The results are in!</a> See what nearly 90,000 developers picked as their most loved, dreaded, and desired coding languages and more in the 2019 Developer Survey.
+            </div>
+            <a class="grid-cell fc-white js-dismiss js-gps-track" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" title="dismiss" data-gps-track="announcement_banner.click({campaign: &#39;2019-04-09.dev-survey-2019&#39;, location: 2, action: 1})"><svg aria-hidden="true" class="svg-icon m0 iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg></a>
+        </div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.Notice.annoucementBannerInit();
+        });
+    </script>
+
+
+
+
+
+    <div class="container">
+
+
+
+
+
+<div id="left-sidebar" data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar">
+    <div class="left-sidebar--sticky-container js-sticky-leftnav">
+            <nav role="navigation">
+                <ol class="nav-links">
+                    <li>    </li><li>
+        <a href="https://stackoverflow.com/" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+Home        </a>
+    </li>
+
+                    <li>
+                        <ol class="nav-links">
+                                <li class="fs-fine tt-uppercase ml8 mt16 mb4 fc-light">Public</li>
+                                <li class=" youarehere">
+        <a id="nav-questions" href="https://stackoverflow.com/questions" class="pl8 js-gps-track nav-links--link -link__with-icon" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+<svg aria-hidden="true" class="svg-icon iconGlobe" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zM8 15.32a6.4 6.4 0 0 1-5.23-7.75L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.4 6.4 0 0 1 2.32 10.24z"></path></svg>                <span class="-link--channel-name">Stack Overflow</span>
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-tags" href="https://stackoverflow.com/tags" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+Tags        </a>
+    </li>
+    <li>
+        <a id="nav-users" href="https://stackoverflow.com/users" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+Users        </a>
+    </li>
+    <li>
+        <a id="nav-jobs" href="https://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">
+Jobs        </a>
+    </li>
+                                                    </ol>
+                    </li>
+                        <li>
+                            <ol class="nav-links">
+                                        <li class="p6">
+                                            <div class="ba bc-black-2 bar-sm p16 grid fd-column ps-relative overflow-hidden">
+                                                <strong class="grid--cell">Teams</strong>
+                                                <span class="grid--cell mt2 fs-caption fc-medium">Q&amp;A for work </span>
+                                                <a href="https://stackoverflow.com/teams" class="js-gps-track s-btn s-btn__outlined ta-center grid--cell mt12" data-gps-track="teams.create.left-sidenav.click({ CampaignType: None})" data-ga="[&quot;teams traffic&quot;,&quot;left nav cta&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]">
+                                                    Learn More
+                                                </a>
+
+                                                <div class="ps-absolute t4 rn6">
+                                                    <svg width="53" height="49" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M49 11l.2 31H18.9L9 49v-7H4V8h31" fill="#CCEAFF"></path><path d="M44.5 19v-.3l-.2-.1-18-13-.1-.1H.5v33h4V46l.8-.6 9.9-6.9h29.3V19z" stroke="#1060E1" stroke-miterlimit="10"></path><path d="M31 2l6-1.5 7 2V38H14.9L5 45v-7H1V6h25l5-4z" fill="#fff"></path><path d="M7 16.5h13m-13 6h14m-14 6h18" stroke="#1060E1" stroke-miterlimit="10"></path><path d="M39 30a14 14 0 1 0 0-28 14 14 0 0 0 0 28z" fill="#FFB935"></path><path d="M50.5 14a13.5 13.5 0 1 1-27 0 13.5 13.5 0 0 1 27 0z" stroke="#F48024" stroke-miterlimit="10"></path><path d="M32.5 21.5v-8h9v8h-9zm2-9.5V9.3A2.5 2.5 0 0 1 37 6.8a2.5 2.5 0 0 1 2.5 2.5V12h-5zm2 3v2m1-2v2" stroke="#fff" stroke-miterlimit="10"></path></svg>
+                                                </div>
+                                            </div>
+                                        </li>
+                            </ol>
+                        </li>
+                </ol>
+            </nav>
+    </div>
+</div>
+   
+
+        <div id="content" class="snippet-hidden">
+
+
+            
+
+
+<div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+    <div class="inner-content clearfix">
+    
+    
+
+            <div id="question-header" class="grid">
+                    <h1 itemprop="name" class="grid--cell fs-headline1 fl1 ow-break-word"><a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing" class="question-hyperlink">Explanation for what 'DEBUG=myapp:* npm start' is actually doing</a></h1>
+
+            
+<div class="pl8 aside-cta grid--cell" role="navigation" aria-label="ask new question">
+        <a href="https://stackoverflow.com/questions/ask" class="d-inline-flex ai-center ws-nowrap s-btn s-btn__primary">
+            Ask Question
+        </a>
+</div>
+
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="36240385" id="question">
+
+    <style>.everyoneloves__top-leaderboard:empty,.everyoneloves__mid-leaderboard:empty,.everyoneloves__bot-mid-leaderboard:empty{                height:90px;width:728px;box-sizing:border-box;
+}</style>
+        <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard" style="min-height: auto; height: auto; display: none;"></div>
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="36240385">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This question shows research effort; it is useful and clear" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="7">7</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This question does not show any research effort; it is unclear or not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"></path></svg></button>
+
+        <button class="js-favorite-btn s-btn s-btn__unset c-pointer py8" aria-pressed="false" aria-label="favorite" data-selected-classes="fc-yellow-600">
+            <svg aria-hidden="true" class="svg-icon iconStar" width="18" height="18" viewBox="0 0 18 18"><path d="M9 12.65l-5.29 3.63 1.82-6.15L.44 6.22l6.42-.17L9 0l2.14 6.05 6.42.17-5.1 3.9 1.83 6.16z"></path></svg>
+            <div class="js-favorite-count mt8" data-value=""></div>
+        </button>
+
+
+</div>
+
+            </div>
+
+            
+<div class="postcell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+
+<p>The getting started page for the Express application generator (located <a href="http://expressjs.com/en/starter/generator.html" rel="noreferrer">here</a>) says to start the server by using <code>$ DEBUG=myapp:* npm start</code> if using MacOS or Linux.  </p>
+
+<p>This works fine, but I'm having trouble understanding what this line is actually doing.  I would have guessed that it would be assigning something to the variable <code>DEBUG</code>, but after exiting the server I ran <code>echo $DEBUG</code> and it printed nothing.  I'm guessing the <code>:</code> is somehow key here, but it's not clear to me how/why.</p>
+
+<p>Hopefully someone can break this down for me.</p>
+    </div>
+
+        <div class="post-taglist grid gs4 gsy fd-column">
+            <div class="grid ps-relative d-block">
+                <a href="https://stackoverflow.com/questions/tagged/node.js" class="post-tag js-gps-track" title="show questions tagged &#39;node.js&#39;" rel="tag">node.js</a> <a href="https://stackoverflow.com/questions/tagged/bash" class="post-tag js-gps-track" title="show questions tagged &#39;bash&#39;" rel="tag">bash</a> <a href="https://stackoverflow.com/questions/tagged/express" class="post-tag js-gps-track" title="show questions tagged &#39;express&#39;" rel="tag">express</a> <a href="https://stackoverflow.com/questions/tagged/command-line" class="post-tag js-gps-track" title="show questions tagged &#39;command-line&#39;" rel="tag">command-line</a> 
+            </div>
+        </div>
+
+    <div class="mb0 ">
+        <div class="mt16 pt4 grid gs8 gsy fw-wrap jc-end ai-start">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/q/36240385" title="short permalink to this question" class="short-link" itemprop="url" id="link-post-36240385">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/36240385/edit" class="suggest-edit-post" title="">improve this question</a></div>
+            </div>
+
+            <div class="post-signature owner grid--cell">
+<div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2016-03-26 20:14:33Z" class="relativetime">Mar 26 '16 at 20:14</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/1193046/pak"><div class="gravatar-wrapper-32"><img src="./buildIssues_files/29de6edef60e9b8c4720e00148134f0a" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://stackoverflow.com/users/1193046/pak">Pak</a><span class="d-none" itemprop="name">Pak</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">370</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="11 bronze badges"><span class="badge3"></span><span class="badgecount">11</span></span>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+                
+    <div class="post-layout--right">
+	    <div id="comments-36240385" class="comments js-comments-container " data-post-id="36240385">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+    <li id="comment-60112133" class="comment js-comment " data-comment-id="60112133">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">What chepner said, and <code>:</code> is just part of the value.</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/4024473/michael-jaros" title="3,525 reputation" class="comment-user">Michael Jaros</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#comment60112133_36240385"><span title="2016-03-26 21:14:16Z" class="relativetime-clean">Mar 26 '16 at 21:14</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-67075070" class="comment js-comment " data-comment-id="67075070">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">I do have the same doubt. many people just copied the documentation without explaining its usage.</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/2042453/shijin" title="1,589 reputation" class="comment-user">shijin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#comment67075070_36240385"><span title="2016-10-06 11:26:25Z" class="relativetime-clean">Oct 6 '16 at 11:26</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-36240385" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" onclick=""></a>
+        </div>         
+    </div>        </div>
+</div>
+
+
+<div id="dfp-isb" class="everyonelovesstackoverflow everyoneloves__inline-sidebar" style="display: none;"></div>
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="6">
+                                6 Answers
+                            <span style="display:none;" itemprop="answerCount">6</span>
+                        </h2>
+                        <div>
+                            
+<div id="tabs">
+        <a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere is-selected " href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+    </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="47481085"></a>
+<div id="answer-47481085" class="answer" data-answerid="47481085" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="47481085">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="9">9</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"></path></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"></path></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<ul>
+<li><p><code>DEBUG=myapp:* npm start</code> consist of two parts.</p></li>
+<li><p>The first part is <code>DEBUG=myapp:*</code> and the second part is <code>npm start</code></p></li>
+<li><p>You may run <code>DEBUG=myapp:*</code> first in your command-line tool, and then
+followed by running <code>npm start</code>.</p></li>
+<li><p><code>DEBUG=myapp:*</code> means you are telling nodejs that you want to turn on logging for debugging purposes. </p>
+
+<ul>
+<li>Remember to replace <code>myapp</code> with your app name. You can find your app name in package.json file under <code>"name"</code> property.
+<a href="./buildIssues_files/EMDqO.png" rel="noreferrer"><img src="./buildIssues_files/EMDqO.png" alt="enter image description here"></a></li>
+<li>The <code>*</code> in <code>myapp:*</code> means to see all the internal logs used in Express</li>
+<li>If you only want to see the logs from the router implementation, then set the value of DEBUG to <code>myapp:router</code>. Likewise, to see logs only from the application implementation set the value of DEBUG to <code>myapp:application</code>, and so on.</li>
+</ul></li>
+<li><p><code>npm start</code> is telling npm to run your <code>scripts</code> stated in the package.json file and the script name is called <code>start</code>
+<a href="./buildIssues_files/EZR4x.png" rel="noreferrer"><img src="./buildIssues_files/EZR4x.png" alt="enter image description here"></a></p></li>
+<li><p><a href="https://expressjs.com/en/guide/debugging.html" rel="noreferrer">Source: https://expressjs.com/en/guide/debugging.html</a></p></li>
+</ul>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2017-11-24T23:13:27"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/47481085" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-47481085">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/47481085/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/47481085/revisions" title="show all edits to this post">edited <span title="2017-11-25 03:42:20Z" class="relativetime">Nov 25 '17 at 3:42</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2017-11-24 23:13:27Z" class="relativetime">Nov 24 '17 at 23:13</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/3290143/andrew-lam"><div class="gravatar-wrapper-32"><img src="./buildIssues_files/DpVVe.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://stackoverflow.com/users/3290143/andrew-lam">Andrew Lam</a><span class="d-none" itemprop="name">Andrew Lam</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">925</span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-47481085" class="comments js-comments-container " data-post-id="47481085">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+    <li id="comment-91918473" class="comment js-comment " data-comment-id="91918473">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">This post is incorrect. <code>debug</code> doesn't look at <code>package.json</code> at all. Whatever is passed to <code>require('debug')('some:app')</code> is what you pass to <code>DEBUG=some:app</code>.</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/510036/qix" title="7,493 reputation" class="comment-user">Qix</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#comment91918473_47481085"><span title="2018-09-24 23:30:24Z" class="relativetime-clean">Sep 24 '18 at 23:30</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-95794328" class="comment js-comment " data-comment-id="95794328">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">@andrewlam What is that file <code>set</code>?  Everything else looks like a express generator project, except for that single file.</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/2487730/zipzit" title="2,014 reputation" class="comment-user">zipzit</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#comment95794328_47481085"><span title="2019-02-02 15:29:58Z" class="relativetime-clean">Feb 2 at 15:29</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-47481085" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+<div id="dfp-mlb" class="everyonelovesstackoverflow everyoneloves__mid-leaderboard" style="min-height: auto; height: auto; display: none;"></div>
+  
+<a name="41635978"></a>
+<div id="answer-41635978" class="answer" data-answerid="41635978" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="41635978">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="3">3</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"></path></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"></path></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>DEBUG is an environment variable set to all debuggers in the myapp app via the wildcard character * for the duration of the session. The DEBUG variable is used by the "tiny node.js &amp; browser debugging utility for your libraries and applications", for which documentation can be found <a href="https://github.com/visionmedia/debug#environment-variables" rel="nofollow noreferrer">here</a>.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2017-01-13T13:42:13"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/41635978" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-41635978">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/41635978/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2017-01-13 13:42:13Z" class="relativetime">Jan 13 '17 at 13:42</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/7415070/eric-tamminga"><div class="gravatar-wrapper-32"><img src="./buildIssues_files/0da2d77224b9e201d7f8bddc842bb1c5" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://stackoverflow.com/users/7415070/eric-tamminga">Eric Tamminga</a><span class="d-none" itemprop="name">Eric Tamminga</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">31</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-41635978" class="comments js-comments-container  dno" data-post-id="41635978">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-41635978" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="36240535"></a>
+<div id="answer-36240535" class="answer" data-answerid="36240535" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="36240535">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="2">2</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"></path></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"></path></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>This is a temporary assignment; <code>npm</code> sees the assigned value in its environment, but it does not affect the current shell. <code>DEBUG</code> retains whatever value it had (or remains unset) after <code>npm</code> exits.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2016-03-26T20:29:18"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/36240535" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-36240535">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/36240535/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2016-03-26 20:29:18Z" class="relativetime">Mar 26 '16 at 20:29</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/1126841/chepner"><div class="gravatar-wrapper-32"><img src="./buildIssues_files/fa05233b2357f8d11c22ef4cfc7bb85c" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://stackoverflow.com/users/1126841/chepner">chepner</a><span class="d-none" itemprop="name">chepner</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 262,898" dir="ltr">263k</span><span title="36 gold badges"><span class="badge1"></span><span class="badgecount">36</span></span><span title="253 silver badges"><span class="badge2"></span><span class="badgecount">253</span></span><span title="345 bronze badges"><span class="badge3"></span><span class="badgecount">345</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-36240535" class="comments js-comments-container  dno" data-post-id="36240535">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-36240535" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="36241525"></a>
+<div id="answer-36241525" class="answer accepted-answer" data-answerid="36241525" itemprop="acceptedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="36241525">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="2">2</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"></path></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"></path></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>It turns out I was thinking that this was far more complicated than it actually is.  Chepner's answer got some gears unstuck in my head.</p>
+
+<p>I created a python script that prints the <code>DEBUG</code> variable and called it instead of <code>npm start</code></p>
+
+<p><code>$ DEBUG=myapp:* python printvar.py</code></p>
+
+<p>Sure enough, this printed <code>myapp:*</code>.  It seems the big piece that I was missing was that the space after the variable assignment is used as a separator between the commands and the <code>:*</code> is nothing more than text that's part of the variable that gets assigned to <code>DEBUG</code>.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2016-03-26T22:14:21"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/36241525" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-36241525">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/36241525/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature owner grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-03-26 22:14:21Z" class="relativetime">Mar 26 '16 at 22:14</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/1193046/pak"><div class="gravatar-wrapper-32"><img src="./buildIssues_files/29de6edef60e9b8c4720e00148134f0a" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://stackoverflow.com/users/1193046/pak">Pak</a><span class="d-none" itemprop="name">Pak</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">370</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="11 bronze badges"><span class="badge3"></span><span class="badgecount">11</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-36241525" class="comments js-comments-container " data-post-id="36241525">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+    <li id="comment-81914614" class="comment js-comment " data-comment-id="81914614">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Why do they want to add :* at the end of myapp?</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/3290143/andrew-lam" title="925 reputation" class="comment-user">Andrew Lam</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#comment81914614_36241525"><span title="2017-11-24 20:57:58Z" class="relativetime-clean">Nov 24 '17 at 20:57</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-36241525" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="36241533"></a>
+<div id="answer-36241533" class="answer" data-answerid="36241533" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="36241533">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="2">2</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"></path></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"></path></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p><code>DEBUG</code> is set as an environment variable for <code>npm</code> and sub processes but not set in your shell, consider this:</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">HELLO</span><span class="pun">=</span><span class="typ">World</span><span class="pln"> bash </span><span class="pun">-</span><span class="pln">c </span><span class="str">'echo $HELLO'</span><span class="pln"> </span><span class="com"># World</span><span class="pln">
+HELLO</span><span class="pun">=</span><span class="typ">World</span><span class="pln"> bash </span><span class="pun">-</span><span class="pln">c </span><span class="str">"bash -c 'echo \$HELLO'"</span><span class="pln"> </span><span class="com"># World</span><span class="pln">
+echo $HELLO </span><span class="com"># Nothing, assuming that HELLO was null before running the above snippets</span></code></pre>
+
+<p>In your case the value <code>myapp:*</code> gets assigned to the variable <code>DEBUG</code>. And this variable will be available inside <code>npm</code>, for what reason it's needed I cannot answer.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2016-03-26T22:15:20"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/36241533" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-36241533">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/36241533/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-03-26 22:15:20Z" class="relativetime">Mar 26 '16 at 22:15</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/887539/andlrc"><div class="gravatar-wrapper-32"><img src="./buildIssues_files/5baef9617bdee6db2f534c118bcbccee.jpeg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://stackoverflow.com/users/887539/andlrc">andlrc</a><span class="d-none" itemprop="name">andlrc</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 36,372" dir="ltr">36.4k</span><span title="12 gold badges"><span class="badge1"></span><span class="badgecount">12</span></span><span title="65 silver badges"><span class="badge2"></span><span class="badgecount">65</span></span><span title="101 bronze badges"><span class="badge3"></span><span class="badgecount">101</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-36241533" class="comments js-comments-container  dno" data-post-id="36241533">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-36241533" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="48551452"></a>
+<div id="answer-48551452" class="answer" data-answerid="48551452" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="48551452">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="0">0</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"></path></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"></path></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>The : is just text that gets assigned to the env variable.</p>
+
+<p>What the line is doing and how it works is as follows:</p>
+
+<p>First I'll discuss express internal level debug messages.  The following env setting all display the same internal log level</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">DEBUG</span><span class="pun">=</span><span class="pln">express</span><span class="pun">:*,</span><span class="pln"> npm start
+DEBUG</span><span class="pun">=</span><span class="pln">express</span><span class="pun">.*,</span><span class="pln"> npm start
+DEBUG</span><span class="pun">=</span><span class="pln">express</span><span class="pun">*,</span><span class="pln"> npm start</span></code></pre>
+
+<p>And the following setting displays the internal log level messages for just the internal router</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">DEBUG</span><span class="pun">=</span><span class="pln">express</span><span class="pun">:</span><span class="pln">router</span><span class="pun">,</span><span class="pln"> npm start
+DEBUG</span><span class="pun">=</span><span class="pln">express</span><span class="pun">.</span><span class="pln">router</span><span class="pun">,</span><span class="pln"> npm start</span></code></pre>
+
+<p>Now in order to see "application" level DEBUG statements. Those that you've added to your code with the debug function.</p>
+
+<p>It has to do with your module dependencies. The value(s) passed into the debug package.  The values can be any arbitrary name - that is they don't need to match package.json, file, object variable name, etc. However the env variable DEBUG value needs to correspond to the value passed into the debug package in your code.</p>
+
+<p>This line of code</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="kwd">var</span><span class="pln"> debug </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">require</span><span class="pun">(</span><span class="str">'debug'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="str">'myapp:myapp'</span><span class="pun">);</span></code></pre>
+
+<p>Consider these two files</p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">www
+</span><span class="pun">…</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> debug </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">require</span><span class="pun">(</span><span class="str">'debug'</span><span class="pun">)(</span><span class="str">'myapp:www'</span><span class="pun">);</span><span class="pln">
+
+app</span><span class="pun">.</span><span class="pln">js
+</span><span class="pun">…</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> debug </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">require</span><span class="pun">(</span><span class="str">'debug'</span><span class="pun">)(</span><span class="str">'myapp:app'</span><span class="pun">);</span></code></pre>
+
+<p>Then if we run the following scenarios:</p>
+
+<ol>
+<li>DEBUG=myapp:* npm start  </li>
+<li>DEBUG=myapp:www npm start  </li>
+<li>DEBUG=myapp:app npm start</li>
+</ol>
+
+<p>We get the following:</p>
+
+<p><a href="https://i.stack.imgur.com/LFHr7.png" rel="nofollow noreferrer">screen shot</a></p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">vagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$ DEBUG</span><span class="pun">=</span><span class="pln">myapp</span><span class="pun">:*</span><span class="pln"> npm start
+
+</span><span class="pun">&gt;</span><span class="pln"> server@0</span><span class="pun">.</span><span class="lit">0.0</span><span class="pln"> start </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">vagrant</span><span class="pun">/</span><span class="pln">despobaldo</span><span class="pun">/</span><span class="pln">server
+</span><span class="pun">&gt;</span><span class="pln"> node </span><span class="pun">./</span><span class="pln">bin</span><span class="pun">/</span><span class="pln">www
+
+  myapp</span><span class="pun">:</span><span class="pln">app here I am </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+  myapp</span><span class="pun">:</span><span class="pln">www </span><span class="typ">Listening</span><span class="pln"> on port </span><span class="lit">3000</span><span class="pln"> </span><span class="pun">+</span><span class="lit">8ms</span><span class="pln">
+</span><span class="pun">^</span><span class="typ">Cvagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$
+vagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$
+vagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$ DEBUG</span><span class="pun">=</span><span class="pln">myapp</span><span class="pun">:</span><span class="pln">www npm start
+
+</span><span class="pun">&gt;</span><span class="pln"> server@0</span><span class="pun">.</span><span class="lit">0.0</span><span class="pln"> start </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">vagrant</span><span class="pun">/</span><span class="pln">despobaldo</span><span class="pun">/</span><span class="pln">server
+</span><span class="pun">&gt;</span><span class="pln"> node </span><span class="pun">./</span><span class="pln">bin</span><span class="pun">/</span><span class="pln">www
+
+  myapp</span><span class="pun">:</span><span class="pln">www </span><span class="typ">Listening</span><span class="pln"> on port </span><span class="lit">3000</span><span class="pln"> </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+</span><span class="pun">^</span><span class="typ">Cvagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$
+vagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$
+vagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$ DEBUG</span><span class="pun">=</span><span class="pln">myapp</span><span class="pun">:</span><span class="pln">app npm start
+
+</span><span class="pun">&gt;</span><span class="pln"> server@0</span><span class="pun">.</span><span class="lit">0.0</span><span class="pln"> start </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">vagrant</span><span class="pun">/</span><span class="pln">despobaldo</span><span class="pun">/</span><span class="pln">server
+</span><span class="pun">&gt;</span><span class="pln"> node </span><span class="pun">./</span><span class="pln">bin</span><span class="pun">/</span><span class="pln">www
+
+  myapp</span><span class="pun">:</span><span class="pln">app here I am </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+</span><span class="pun">^</span><span class="typ">Cvagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$
+vagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$
+vagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$</span></code></pre>
+
+<p>In order to see both internal and "application" level logging you would doing something like this:</p>
+
+<p>DEBUG=myapp:*,express:router npm start</p>
+
+<p><a href="https://i.stack.imgur.com/ggNgt.png" rel="nofollow noreferrer">screen shot</a></p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pln">vagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$
+vagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$ DEBUG</span><span class="pun">=</span><span class="pln">myapp</span><span class="pun">:*,</span><span class="pln">express</span><span class="pun">:</span><span class="pln">router npm start
+
+</span><span class="pun">&gt;</span><span class="pln"> server@0</span><span class="pun">.</span><span class="lit">0.0</span><span class="pln"> start </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">vagrant</span><span class="pun">/</span><span class="pln">despobaldo</span><span class="pun">/</span><span class="pln">server
+</span><span class="pun">&gt;</span><span class="pln"> node </span><span class="pun">./</span><span class="pln">bin</span><span class="pun">/</span><span class="pln">www
+
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> query </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> expressInit </span><span class="pun">+</span><span class="lit">4ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> logger </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> jsonParser </span><span class="pun">+</span><span class="lit">7ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> urlencodedParser </span><span class="pun">+</span><span class="lit">3ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> cookieParser </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> serveStatic </span><span class="pun">+</span><span class="lit">1ms</span><span class="pln">
+  myapp</span><span class="pun">:</span><span class="pln">app here I am </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> router </span><span class="pun">+</span><span class="lit">1ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/users'</span><span class="pln"> router </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> </span><span class="str">&lt;anonymous&gt;</span><span class="pln"> </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+  express</span><span class="pun">:</span><span class="pln">router </span><span class="kwd">use</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> </span><span class="str">&lt;anonymous&gt;</span><span class="pln"> </span><span class="pun">+</span><span class="lit">0ms</span><span class="pln">
+  myapp</span><span class="pun">:</span><span class="pln">www </span><span class="typ">Listening</span><span class="pln"> on port </span><span class="lit">3000</span><span class="pln"> </span><span class="pun">+</span><span class="lit">7ms</span><span class="pln">
+</span><span class="pun">^</span><span class="typ">Cvagrant@n1</span><span class="pun">:~</span><span class="str">/despobaldo/</span><span class="pln">server$</span></code></pre>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2018-01-31T21:08:11"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/48551452" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-48551452">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/48551452/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2018-01-31 21:08:11Z" class="relativetime">Jan 31 '18 at 21:08</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/9296410/daves-550"><div class="gravatar-wrapper-32"><img src="./buildIssues_files/9oLNu.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://stackoverflow.com/users/9296410/daves-550">DaveS_550</a><span class="d-none" itemprop="name">DaveS_550</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-48551452" class="comments js-comments-container  dno" data-post-id="48551452">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-48551452" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="https://stackoverflow.com/questions/36240385/answer/submit" method="post" class="post-form">
+                            <input type="hidden" id="post-id" value="36240385">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com/">
+                            <h2 class="space">
+                                Your Answer
+                            </h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        var channelOptions = {
+            tags: "".split(" "),
+            id: "1"
+        };
+        initTagRenderer("".split(" "), "".split(" "), channelOptions);
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                    autoActivateHeartbeat: false,
+                    convertImagesToLinks: true,
+                noModals: true,
+                showLowRepImageUploadWarning: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                imageUploader: {
+                    brandingHtml: "Powered by \u003ca class=\"icon-imgur-white\" href=\"https://imgur.com/\"\u003e\u003c/a\u003e",
+                    contentPolicyHtml: "User contributions licensed under \u003ca href=\"https://creativecommons.org/licenses/by-sa/3.0/\"\u003ecc by-sa 3.0 with attribution required\u003c/a\u003e \u003ca href=\"https://stackoverflow.com/legal/content-policy\"\u003e(content policy)\u003c/a\u003e",
+                    allowUrls: true
+                },
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor js-wz-element" data-wz-state="8,16,32,64,128,256">
+
+    <div class="ps-relative"> 
+        <div class="wmd-container mb8">
+            <div id="wmd-button-bar" class="wmd-button-bar btr-sm"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-spacer wmd-spacer-max"></li></ul></div>
+                        <div class="js-stacks-validation">
+                <div class="ps-relative">
+                    <textarea id="wmd-input" class="wmd-input js-wz-element s-input bar0" name="post-text" cols="92" rows="15" tabindex="101" data-wz-state="256" data-min-length=""></textarea>
+                </div>
+                <div class="s-input-message mt4 d-none js-stacks-validation-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <aside class="grid ai-start jc-space-between js-answer-help s-notice s-notice__warning pb0 pr4 pt4 mb8 d-none" role="status" aria-hidden="true">
+    <div class="grid--cell pt8">
+        <p>Thanks for contributing an answer to Stack Overflow!</p><ul><li>Please be sure to <em>answer the question</em>. Provide details and share your research!</li></ul><p>But <em>avoid</em> …</p><ul><li>Asking for help, clarification, or responding to other answers.</li><li>Making statements based on opinion; back them up with references or personal experience.</li></ul><p>To learn more, see our <a href="https://stackoverflow.com/help/how-to-answer">tips on writing great answers</a>.</p>
+    </div>
+    <button class="grid--cell js-answer-help-close-btn s-btn s-btn__muted fc-dark">
+        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg>
+    </button>
+</aside>
+
+
+    <div id="draft-saved" class="draft-saved community-option fl" style="height:24px; display:none;">draft saved</div>
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="e941b5cbf1ee4d8a437a67da1130e2db6867aa27a97d57d1d1899e1366b46bed">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div class="ps-relative">
+                                
+                                            <div class="form-item new-post-login p0 my16">
+                <div class="grid gs16 md:fd-column new-login-form">
+                    <div class="grid fd-column w50 md:w-auto gsy gs8 jc-space-between new-login-left">
+                        <h3 class="grid--cell fs-title">Sign up or <a id="login-link" href="https://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f36240385%2fexplanation-for-what-debug-myapp-npm-start-is-actually-doing%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="grid--cell ta-center s-btn s-btn__muted s-btn__outlined s-btn__icon google-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Google&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><g><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></g></svg> Sign up using Google
+                        </div>
+                        <div class="grid--cell ta-center s-btn s-btn__muted s-btn__icon facebook-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"></path></svg> Sign up using Facebook
+                        </div>
+                        <div class="grid--cell ta-center s-btn s-btn__muted s-btn__outlined s-btn__icon stackexchange-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphXSm" width="18" height="18" viewBox="0 0 18 18"><g><path fill="#BCBBBB" d="M14 16v-5h2v7H2v-7h2v5z"></path><path d="M5 15v-2h8v2H5zM12.09.72l4.5 6.06-1.2.9-4.51-6.06 1.21-.9zM8.34 4.3l.97-1.16 5.8 4.83-.96 1.16-5.8-4.83zm-1.9 3.36l.64-1.37 6.85 3.19-.63 1.37-6.85-3.2zM5.4 11.39l.38-1.67 7.42 1.48-.22 1.46-7.58-1.27z" fill="#F48024"></path></g></svg> Sign up using Email and Password
+                        </div>
+                    </div>
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="grid gsy gs8 fd-column w50 md:w-auto new-login-right form-item p0">
+                                <h3 class="grid--cell fs-title">Post as a guest</h3>
+            <div class="grid--cell">
+                <div class="grid gs4 gsy fd-column">
+                    <label class="s-label" for="display-name">Name</label>
+                    <div class="grid ps-relative">
+                        <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="grid--cell">
+                <div class="grid gs4 gsy fd-column">
+                    <div class="grid--cell">
+                        <div class="grid gs2 gsy fd-column">
+                            <label class="grid--cell s-label" for="m-address">Email</label>
+                            <p class="grid--cell s-description">Required, but never shown</p>
+                        </div>
+                    </div>
+                    <div class="grid ps-relative">
+                        <input class="s-input" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder="">
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fstackoverflow.com%2fquestions%2f36240385%2fexplanation-for-what-debug-myapp-npm-start-is-actually-doing%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3 class="grid--cell fs-title">Post as a guest</h3>
+            <div class="grid--cell">
+                <div class="grid gs4 gsy fd-column">
+                    <label class="s-label" for="display-name">Name</label>
+                    <div class="grid ps-relative">
+                        <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder="" />
+                    </div>
+                </div>
+            </div>
+            <div class="grid--cell">
+                <div class="grid gs4 gsy fd-column">
+                    <div class="grid--cell">
+                        <div class="grid gs2 gsy fd-column">
+                            <label class="grid--cell s-label" for="m-address">Email</label>
+                            <p class="grid--cell s-description">Required, but never shown</p>
+                        </div>
+                    </div>
+                    <div class="grid ps-relative">
+                        <input class="s-input" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder="" />
+                    </div>
+                </div>
+            </div>
+
+            </noscript>
+
+                            </div>
+
+                                                            <div class="form-submit cbt grid gsx gs4">
+                                    <button id="submit-button" class="grid--cell s-btn s-btn__primary s-btn__icon" type="submit" tabindex="120" autocomplete="off">
+Post Your Answer                                    </button>
+                                    <button class="grid--cell s-btn s-btn__danger discard-answer dno">
+                                        Discard
+                                    </button>
+                                        <p class="privacy-policy-agreement">
+                                            By clicking “Post Your Answer”, you agree to our <a href="https://stackoverflow.com/legal/terms-of-service/public" name="tos" target="_blank" class="-link">terms of service</a>, <a href="https://stackoverflow.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">privacy policy</a> and <a href="https://stackoverflow.com/legal/cookie-policy" name="cookie" target="_blank" class="-link">cookie policy</a><input type="hidden" name="legalLinksShown" value="1">
+                                        </p>
+                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?                            Browse other questions tagged <a href="https://stackoverflow.com/questions/tagged/node.js" class="post-tag" title="show questions tagged &#39;node.js&#39;" rel="tag">node.js</a> <a href="https://stackoverflow.com/questions/tagged/bash" class="post-tag" title="show questions tagged &#39;bash&#39;" rel="tag">bash</a> <a href="https://stackoverflow.com/questions/tagged/express" class="post-tag" title="show questions tagged &#39;express&#39;" rel="tag">express</a> <a href="https://stackoverflow.com/questions/tagged/command-line" class="post-tag" title="show questions tagged &#39;command-line&#39;" rel="tag">command-line</a>  or <a href="https://stackoverflow.com/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2016-03-26 20:14:33Z">
+                                    <b>
+                                        <time itemprop="dateCreated" datetime="2016-03-26T20:14:33">3 years ago</time>
+                                    </b>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>3,258 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing?lastactivity" class="lastactivity-link" title="2018-01-31 21:08:11Z">1 year, 2 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+            <div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Featured on Meta
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://meta.stackexchange.com/questions/326611/announcing-the-arrival-of-valued-associate-679-cesar-manara?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackexchange.com/questions/326611/announcing-the-arrival-of-valued-associate-679-cesar-manara&quot;,null,null]">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://meta.stackexchange.com/questions/326611/announcing-the-arrival-of-valued-associate-679-cesar-manara?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackexchange.com/questions/326611/announcing-the-arrival-of-valued-associate-679-cesar-manara&quot;,null,null]">Announcing the arrival of Valued Associate #679: Cesar Manara</a>
+        </div>
+        <br class="cbt">
+    </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://meta.stackexchange.com/questions/326718/planned-maintenance-scheduled-april-17-18-2019-at-0000utc-800pm-us-eastern?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackexchange.com/questions/326718/planned-maintenance-scheduled-april-17-18-2019-at-0000utc-800pm-us-eastern&quot;,null,null]">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://meta.stackexchange.com/questions/326718/planned-maintenance-scheduled-april-17-18-2019-at-0000utc-800pm-us-eastern?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackexchange.com/questions/326718/planned-maintenance-scheduled-april-17-18-2019-at-0000utc-800pm-us-eastern&quot;,null,null]">Planned maintenance scheduled April 17/18, 2019 at 00:00UTC (8:00pm US/Eastern)</a>
+        </div>
+        <br class="cbt">
+    </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://meta.stackoverflow.com/questions/382721/data-science-time-april-2019-and-salary-with-experience?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackoverflow.com/questions/382721/data-science-time-april-2019-and-salary-with-experience&quot;,null,null]">
+<div class="favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>                </a>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://meta.stackoverflow.com/questions/382721/data-science-time-april-2019-and-salary-with-experience?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackoverflow.com/questions/382721/data-science-time-april-2019-and-salary-with-experience&quot;,null,null]">Data science time! April 2019 and salary with experience</a>
+        </div>
+        <br class="cbt">
+    </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://meta.stackoverflow.com/questions/302836/should-we-burninate-the-wrap-tag?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackoverflow.com/questions/302836/should-we-burninate-the-wrap-tag&quot;,null,null]">
+<div class="favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>                </a>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://meta.stackoverflow.com/questions/302836/should-we-burninate-the-wrap-tag?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackoverflow.com/questions/302836/should-we-burninate-the-wrap-tag&quot;,null,null]">Should we burninate the [wrap] tag?</a>
+        </div>
+        <br class="cbt">
+    </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://meta.stackoverflow.com/questions/381671/the-ask-question-wizard-is-live?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackoverflow.com/questions/381671/the-ask-question-wizard-is-live&quot;,null,null]">
+<div class="favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>                </a>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://meta.stackoverflow.com/questions/381671/the-ask-question-wizard-is-live?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackoverflow.com/questions/381671/the-ask-question-wizard-is-live&quot;,null,null]">The Ask Question Wizard is Live!</a>
+        </div>
+        <br class="cbt">
+    </div>
+    </div>
+</div>
+<div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar" style="min-height: auto; height: auto; display: none;"></div>
+            <div id="hireme" class="tex2jax_ignore clc-cp-container"><div class="clc-cp-sb--tall"><div class="clc-cp-sb-header blue"><a href="https://stackoverflow.com/jobs/companies/the-home-depot" data-clc-click="https://clc.stackoverflow.com/click?an=AUAAv_8K2vZ-Vl3D1kgFYiRBQwICBIH4oxE7A-5y9-cNutgWABQACMBDLY05JM2XPgIDnogPA6qIDwDiGaHLTaJNWml0&amp;cr=371770&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2Fcompanies%2Fthe-home-depot%3Fmed=clc&amp;sig=kCOA43K_phhjyQ" class="clc-cp-link" target="_blank"></a><div class="clc-cp-sb-header-image"><div class="clc-cp-sb-bgcover"><div class="clc-cp-sb-bg-image" style="background-image: url(https://i.stack.imgur.com/gi461m.jpg)"></div></div><div class="clc-cp-sb-logo"><img src="./buildIssues_files/v8uX9.png" alt="The Home Depot"></div></div><div class="clc-cp-sb-header-title"><p class="clc-cp-sb-company-name">The Home Depot</p><p class="clc-cp-sb-location"><svg viewBox="0 0 12 12"><path d="M6 5.7c.4 0 .7-.1.9-.4.3-.3.4-.6.4-.9 0-.4-.1-.7-.4-.9-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.3.2-.4.5-.4.9s.1.7.4.9c.2.3.5.4.9.4zm0-5c1 0 1.9.4 2.6 1.1.7.7 1.1 1.6 1.1 2.6 0 .5-.1 1.1-.4 1.8s-.5 1.3-.9 1.9c-.4.5-.7 1.1-1.1 1.6-.4.5-.7.9-.9 1.2l-.4.4c-.1-.1-.2-.3-.4-.5s-.5-.6-.9-1.2c-.4-.5-.8-1-1.1-1.6s-.7-1.1-.9-1.8c-.3-.7-.4-1.3-.4-1.8 0-1 .4-1.9 1.1-2.6S5 .7 6 .7z"></path></svg>Toronto, ON, Canada</p></div></div><div class="clc-cp-sb-overview"><a href="https://stackoverflow.com/jobs/companies/the-home-depot" data-clc-click="https://clc.stackoverflow.com/click?an=AUAAv_8K2vZ-Vl3D1kgFYiRBQwICBIH4oxE7A-5y9-cNutgWABQACMBDLY05JM2XPgIDnogPA6qIDwDiGaHLTaJNWml0&amp;cr=371770&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2Fcompanies%2Fthe-home-depot%3Fmed=clc&amp;sig=kCOA43K_phhjyQ" class="clc-cp-link" target="_blank"></a><div><div class="overview-icon industries"><svg viewBox="0 0 12 12"><path d="M6 3.3V1.1H.5v9.8h10.9V3.3H6zM2.7 9.8H1.6V8.7h1.1v1.1zm0-2.2H1.6V6.5h1.1v1.1zm0-2.1H1.6V4.4h1.1v1.1zm0-2.2H1.6V2.2h1.1v1.1zm2.2 6.5H3.8V8.7h1.1v1.1zm0-2.2H3.8V6.5h1.1v1.1zm0-2.1H3.8V4.4h1.1v1.1zm0-2.2H3.8V2.2h1.1v1.1zm5.5 6.5H6V8.7h1.1V7.6H6V6.5h1.1v-1H6V4.4h4.4v5.4zM9.3 5.5H8.2v1.1h1.1V5.5zm0 2.1H8.2v1.1h1.1V7.6z"></path></svg></div><div class="overview-icon company-status"><svg viewBox="0 0 12 12"><path class="st0" d="M9.9 3.3h-2V1.9L7 1.4H5l-1 .5v1.5H2.1a1 1 0 0 0-1 1v5.3c0 .5.4 1 1 1h7.8c.5 0 1-.4 1-1V4.3c0-.5-.5-1-1-1zM5 2.4h2v1H5v-1z"></path></svg></div><div class="overview-icon company-size"><svg viewBox="0 0 12 12"><path d="M8.2 5.5c.9 0 1.6-.7 1.6-1.6s-.7-1.7-1.6-1.7-1.6.7-1.6 1.6.7 1.7 1.6 1.7zm-4.4 0c.9 0 1.6-.7 1.6-1.6s-.6-1.7-1.6-1.7-1.6.7-1.6 1.6.7 1.7 1.6 1.7zm0 1.1C2.6 6.6 0 7.2 0 8.5v1.4h7.6V8.5c.1-1.3-2.5-1.9-3.8-1.9zm4.4 0h-.5c.6.5 1.1 1.1 1.1 1.9v1.4H12V8.5c0-1.3-2.5-1.9-3.8-1.9z"></path></svg></div></div><div><span>Retail</span><span>Public</span><span>10k+ people</span></div></div><div class="clc-cp-sb-core"><div class="clc-cp-sb-jobs"><ul><li><a class="clc-cp-job-link" target="_blank" href="https://stackoverflow.com/jobs/246814/sr-back-end-developer-the-home-depot" data-clc-click="https://clc.stackoverflow.com/click?an=AUAAv_8K2vZ-Vl3D1kgFYiRBQwICBIH4oxE7A-5y9-cNutgWABQACMBDLY05JM2XPgIDnogPA6qIDwDiGaHLTaJNWml0&amp;cr=371770&amp;ct=3&amp;ctid=246814&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F246814%2Fsr-back-end-developer-the-home-depot%3Fmed=clc&amp;sig=pOIsxc5mfMAzeA"> <p class="title">Sr. Back End Developer</p><p class="salary"></p><p></p><span class="clc-cp-tag">amazon-web-services</span><span class="clc-cp-tag">kotlin</span></a> </li><li><a class="clc-cp-job-link" target="_blank" href="https://stackoverflow.com/jobs/246826/ui-ux-designer-the-home-depot" data-clc-click="https://clc.stackoverflow.com/click?an=AUAAv_8K2vZ-Vl3D1kgFYiRBQwICBIH4oxE7A-5y9-cNutgWABQACMBDLY05JM2XPgIDnogPA6qIDwDiGaHLTaJNWml0&amp;cr=371770&amp;ct=3&amp;ctid=246826&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F246826%2Fui-ux-designer-the-home-depot%3Fmed=clc&amp;sig=ifKR4cIvmY1dYg"> <p class="title">UI/UX Designer</p><p class="salary"></p><p></p><span class="clc-cp-tag">photoshop</span><span class="clc-cp-tag">adobe-illustrator</span></a> </li></ul></div></div><div><div class="clc-cp-sb-learnmore"><a href="https://stackoverflow.com/jobs/companies/the-home-depot" data-clc-click="https://clc.stackoverflow.com/click?an=AUAAv_8K2vZ-Vl3D1kgFYiRBQwICBIH4oxE7A-5y9-cNutgWABQACMBDLY05JM2XPgIDnogPA6qIDwDiGaHLTaJNWml0&amp;cr=371770&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2Fcompanies%2Fthe-home-depot%3Fmed=clc&amp;sig=kCOA43K_phhjyQ" class="clc-g-center clc-btn-secondary -learn-more" target="_blank">View all 2 job openings!</a></div></div><img src="./buildIssues_files/impression.gif" class="impression" style="display: none;"></div></div>
+<script>;try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(a){var b=a.serviceName,c=a.slot,d=a.lineItemId;try{var e=c.getSlotElementId(),f=[];e||f.push('id=0');var h=document.getElementById(e);if(!e||h?h.hasAttribute('data-clc-stalled')&&f.push('st=1'):f.push('el=0'),0!==f.length)return void B(f.join('&'));-1===x.dh.indexOf(d)?h.setAttribute('data-clc-prefilled','true'):g(h),h.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),B('e=1')}}function q(){return Object.keys(F.ids)}function r(a){var b=F.ids[a],c=F.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+C+'/'+E+'/'+b+'/'+D,sizes:c,zone:b}}function s(a){return!(clc.collapse&&void 0!==clc.collapse[a])||!!clc.collapse[a]}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);s(f)&&g.setCollapseEmptyDiv(!0,!0),g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d).map(function(a){return a.id}),ineligible:g.filter(c)}}function w(b){if(void 0===b&&(b=q()),!m())return n(),void googletag.cmd.push(function(){return w(b)});var c=v(b),d=c.eligible,e=c.ineligible;if(e.forEach(g),0!==d.length){o(),googletag.destroySlots();var f=googletag.pubads();f.enableSingleRequest(),a.sreEvent||(f.addEventListener('slotRenderEnded',p),a.sreEvent=!0),u(f),d.forEach(function(a){return t(a,f)}),googletag.enableServices(),d.forEach(function(a){googletag.display(a)})}}var x=function(a){for(var b=[],c=1;c<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=04d772c81312","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=768595a6d237","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"dh":[4385506061,4386578282,4386579572]},a.options||{}),y=h(function(){var a=x.lib;l()&&(a=a.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2')),i(a)}),z=a.cmd||[];Array.isArray(z)&&(0<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a},C='248424177',D=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':/^\/$/.test(location.pathname)||/^\/home/.test(location.pathname)?'home-page':'question-pages',E=location.hostname;var F={slots:{lb:[[728,90]],mlb:[[728,90]],smlb:[[728,90]],bmlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},"tag-sponsorship":[[730,135]],"mobile-below-question":[[320,50],[300,250]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-smlb":'smlb',"dfp-bmlb":'bmlb',"dfp-tsb":'sb',"dfp-isb":'sb',"dfp-tag":'tag-sponsorship',"dfp-m-aq":'mobile-below-question',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}};(function(){var b=x.al;b&&z.push(function(){return a.load()})})(),n(),a.dfp={load:w},a.options=x,a.cmd=z})(this.clc=this.clc||{})}catch(a){window.console.error(a)}</script>            <script>
+                var clc = clc || {};
+                clc.collapse = { sb: !0,'tag-sponsorship':!0,lb:!1,mlb:!1,smlb:!1,bmlb:!1,'mobile-below-question':!0};
+                clc.cmd = clc.cmd || [];
+                clc.cmd.push(function () { window.clc_request='AjCU-VVdw9YIAAAAAAH8KAICAAAAAgAAAAAjAAAAfG5vZGUuanN8YmFzaHxleHByZXNzfGNvbW1hbmQtbGluZXwAffeXVYJfNpBwXA'; clc.load(); });
+                                clc.dfp = clc.dfp || {};
+                clc.dfp.targeting = {Registered:['false'],'so-tag':['node.js','bash','express','command-line']};
+                
+                var googletag = googletag || {};
+                googletag.cmd = googletag.cmd || [];
+                googletag.cmd.push(function () { clc.dfp.load(); });
+            </script><div class="s-sidebarwidget mb16 module">
+    <div class="s-sidebarwidget--header grid ai-center">
+        <a href="https://chat.stackoverflow.com/" class="js-chat-ad-link" title="73 users active in 39 rooms the last 60 minutes">73 people chatting</a>
+    </div>
+        <div class="s-sidebarwidget--content s-sidebarwidget__items js-chat-ad-rooms"><div class="s-sidebarwidget--item"><div class="grid fd-column gs2"><a class="grid--cell" href="https://chat.stackoverflow.com/rooms/98569">#!/bin/bash</a><div class="grid--cell fs-fine fc-black-300 mb4" title="2019-04-17 13:30:40Z">4 hours ago - <a href="https://chat.stackoverflow.com/users/6294609">Queen</a></div><div class="grid gs4 ai-center fw-wrap"><a class="grid--cell" href="https://chat.stackoverflow.com/users/6294609"><img class="bar-sm" title="Queen: 4 hours ago" src="./buildIssues_files/58jhk.jpg" width="23" height="23"></a><a class="grid--cell" href="https://chat.stackoverflow.com/users/7035175"><img class="bar-sm" title="Jenna Sloan: Nov 3 at 17:44" src="./buildIssues_files/photo.jpg" width="23" height="23"></a></div></div></div></div>
+</div>
+
+
+    <script>
+    // <!--
+        StackExchange.ready(function () {
+            var options = {
+                chatUrl: 'https://chat.stackoverflow.com',
+                reloadUrl: '/api/recent-chat',
+                preloadedData: null,
+                tagBased: true,
+            };
+
+            StackExchange.chatAd.init(options);
+        });
+    // -->
+    </script>
+            
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/7337572?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">205</div></a><a href="https://stackoverflow.com/questions/7337572/what-does-middleware-and-app-use-actually-mean-in-expressjs?rq=1" class="question-hyperlink">What does middleware and app.use actually mean in Expressjs?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/11716421?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">174</div></a><a href="https://stackoverflow.com/questions/11716421/difference-between-npm-start-node-app-js-when-starting-app?rq=1" class="question-hyperlink">Difference between `npm start` &amp; `node app.js`, when starting app?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/19030170?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">269</div></a><a href="https://stackoverflow.com/questions/19030170/what-is-the-bower-and-npm-version-syntax?rq=1" class="question-hyperlink">What is the bower (and npm) version syntax?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/19578796?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1434</div></a><a href="https://stackoverflow.com/questions/19578796/what-is-the-save-option-for-npm-install?rq=1" class="question-hyperlink">What is the --save option for npm install?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/35245032?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://stackoverflow.com/questions/35245032/is-sudo-npm-start-different-from-npm-start-c-bson-extension?rq=1" class="question-hyperlink">Is “sudo npm start” different from “npm start” ? C++ bson extension</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/41277452?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://stackoverflow.com/questions/41277452/thinkster-mean-stack-tutorial-error-when-routing-setting-up-rest-apis-with-expr?rq=1" class="question-hyperlink">Thinkster MEAN Stack tutorial, error when routing/setting up REST apis with expressJS</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/47598014?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://stackoverflow.com/questions/47598014/sending-post-request-body-to-web-page-with-nodejs?rq=1" class="question-hyperlink">Sending POST request body to web page with NODEJS</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/48348869?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://stackoverflow.com/questions/48348869/nodejs-express-server-not-closing?rq=1" class="question-hyperlink">Nodejs express server not closing</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/50648662?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://stackoverflow.com/questions/50648662/create-single-binary-from-express-react-app-with-zeit-pkg?rq=1" class="question-hyperlink">Create single binary from express + react app with zeit pkg?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/53579310?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://stackoverflow.com/questions/53579310/npm-start-does-not-work-ive-tried-everything-im-confused?rq=1" class="question-hyperlink">npm start does not work. I've tried everything. I'm confused</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/209233/short-story-by-isaac-asimov-about-a-mental-chef" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Short story by Isaac Asimov about a mental chef
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="https://aviation.stackexchange.com/questions/62377/why-are-there-no-cargo-aircraft-with-flying-wing-design" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are there no cargo aircraft with "flying wing" design?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-space" title="Space Exploration Stack Exchange"></div><a href="https://space.stackexchange.com/questions/35569/apollo-command-module-space-walk" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Apollo command module space walk?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/107831/withdrew-%c2%a32800-but-only-%c2%a32000-shows-as-withdrawn-on-online-banking-what-are-my" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Withdrew £2800, but only £2000 shows as withdrawn on online banking; what are my obligations?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/98426/significance-of-cerseis-obsession-with-elephants" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Significance of Cersei's obsession with elephants?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-music" title="Music: Practice &amp; Theory Stack Exchange"></div><a href="https://music.stackexchange.com/questions/82897/is-it-common-practice-to-audition-new-musicians-1-2-1-before-rehearsing-with-the" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it common practice to audition new musicians 1-2-1 before rehearsing with the entire band?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/494202/muzzle-or-not-what-would-you-call-this-thing" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Muzzle or not? What would you call this thing?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/144125/how-to-tell-that-you-are-a-giant" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to tell that you are a giant?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/135751/denied-boarding-although-i-have-proper-visa-and-documentation-to-whom-should-i" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Denied boarding although I have proper visa and documentation. To whom should I make a complaint?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/128205/is-it-ethical-to-give-a-final-exam-after-the-professor-has-quit-before-teaching" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it ethical to give a final exam after the professor has quit before teaching the remaining chapters of the course?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-quantumcomputing" title="Quantum Computing Stack Exchange"></div><a href="https://quantumcomputing.stackexchange.com/questions/5929/how-to-superpose-two-composite-qubit-states" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:694 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to superpose two composite qubit states?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="https://chemistry.stackexchange.com/questions/112891/when-a-candle-burns-why-does-the-top-of-wick-glow-if-bottom-of-flame-is-hottest" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When a candle burns, why does the top of wick glow if bottom of flame is hottest?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/183369/amount-of-permutations-on-an-nxnxn-rubiks-cube" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Amount of permutations on an NxNxN Rubik's Cube
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="https://mathematica.stackexchange.com/questions/195400/around-usage-results" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Around usage results
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/433058/why-have-apparent-memory-bitflips-in-non-ecc-memory-not-increased" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why have apparent memory bitflips in non-ECC memory not increased?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="https://cooking.stackexchange.com/questions/97521/what-does-lightly-crushed-mean-for-cardamon-pods" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does "lightly crushed" mean for cardamon pods?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/107843/is-the-standard-deduction-better-than-itemized-when-both-are-the-same-amount" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the Standard Deduction better than Itemized when both are the same amount?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/207492/why-do-people-hide-their-license-plates-in-the-eu" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do people hide their license plates in the EU?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/485254/matrices-and-tikz-arrows-inside-the-matrix" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Matrices and TikZ : arrows inside the matrix
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="https://physics.stackexchange.com/questions/473330/can-anything-be-seen-from-the-center-of-the-bo%c3%b6tes-void-how-dark-would-it-be" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can anything be seen from the center of the Boötes void? How dark would it be?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="https://dba.stackexchange.com/questions/235044/on-sql-server-is-it-possible-to-restrict-certain-users-from-using-certain-funct" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    On SQL Server, is it possible to restrict certain users from using certain functions, operators or statements?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/133985/dating-a-former-employee" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Dating a Former Employee
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/205848/what-do-you-call-the-main-part-of-a-joke" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What do you call the main part of a joke?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-law" title="Law Stack Exchange"></div><a href="https://law.stackexchange.com/questions/39130/if-a-contract-sometimes-uses-the-wrong-name-is-it-still-valid" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:617 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If a contract sometimes uses the wrong name, is it still valid?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+
+<div id="feed-link">
+    <a href="https://stackoverflow.com/feeds/question/36240385" title="feed of this question and its answers">
+        <svg aria-hidden="true" class="svg-icon fc-orange-400 iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"></path></svg>
+        question feed
+    </a>
+</div>
+        </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/36240385/ivc/e01a');});</script>
+<noscript><div><img src="/posts/36240385/ivc/e01a" class="dno" alt="" width="0" height="0"></div></noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div><script src="./buildIssues_files/clc.min.js"></script><script src="./buildIssues_files/gpt.js"></script>
+
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+                <div class="site-footer--logo">
+
+                    
+                    <a href="https://stackoverflow.com/"><svg aria-hidden="true" class="svg-icon native iconLogoGlyphMd" width="32" height="37" viewBox="0 0 32 37"><g><path fill="#BCBBBB" d="M26 33v-9h4v13H0V24h4v9z"></path><path d="M23.1 25.99l.68-2.95-16.1-3.35L7 23l16.1 2.99zM9.1 15.2l15 7 1.4-3-15-7-1.4 3zm4.2-7.4L26 18.4l2.1-2.5L15.4 5.3l-2.1 2.5zM21.5 0l-2.7 2 9.9 13.3 2.7-2L21.5 0zM7 30h16v-3H7v3z" fill="#F48024"></path></g></svg></a>
+                </div>
+            
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com/" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list js-primary-footer-links">
+                            <li class="-item"><a href="https://stackoverflow.com/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                     <li class="-item"><a href="https://stackoverflow.com/jobs/salary" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 28})">Salary Calculator</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        <li class="-item"><a class="-link" role="button">Disable Responsiveness</a></li></ul>
+                    </div>
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Products</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/teams" class="js-gps-track -link" data-ga="[&quot;teams traffic&quot;,&quot;footer - site nav&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]" data-gps-track="footer.click({ location: 2, link: 29 })">Teams</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertising" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Advertising</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/enterprise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/36240385/explanation-for-what-debug-myapp-npm-start-is-actually-doing#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                    <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 26 })">
+                        <strong>
+                            more (31)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 26 })">
+                        <strong>
+                            more (15)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 26 })">
+                        <strong>
+                            more (33)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="scientists, academics, teachers, and students in the field of chemistry">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 4, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                    </ul>
+    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+site design / logo © 2019 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                            with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>.
+                    <span id="svnrev">rev&nbsp;2019.4.16.33340</span>
+                </p>
+            </div>
+        </div>
+
+            </footer>
+            <script>StackExchange.ready(function () { StackExchange.responsiveness.addSwitcher(); })</script>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: [
+                        'UA-108242619-1'
+                    ]
+                });
+
+
+
+                    StackExchange.ga.setDimension('dimension2', '|node.js|bash|express|command-line|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+            
+    
+    
+<div class="adsbox" id="clc-abd" style="position: absolute; pointer-events: none;">&nbsp;</div><script src="./buildIssues_files/markup.js"></script></body></html>

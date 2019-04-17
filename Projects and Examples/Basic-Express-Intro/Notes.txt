@@ -19,3 +19,48 @@ and typos. For more information about routes, see: Router() documentation.
 router.use()
 Uses the specified middleware function or functions, with optional mount path path, that defaults to “/”.
 This method is similar to app.use(). A simple example and use case is described below. See app.use() for more information
+
+Express Generator app skeleton creation.
+
+The express-generator package installs the express command-line tool. Use the following command to do so:
+
+$ npm install express-generator -g
+
+express -h
+
+  Usage: express [options] [dir]
+
+  Options:
+
+    -h, --help          output usage information
+        --version       output the version number
+    -e, --ejs           add ejs engine support
+        --hbs           add handlebars engine support
+        --pug           add pug engine support
+    -H, --hogan         add hogan.js engine support
+        --no-view       generate without view engine
+    -v, --view <engine> add view <engine> support (ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade)
+    -c, --css <engine>  add stylesheet <engine> support (less|stylus|compass|sass) (defaults to plain css)
+        --git           add .gitignore
+    -f, --force         force on non-empty directory
+
+
+Express command to create project called command line build 
+with view.js as template.
+express --view=ejs command-Line-Build
+
+Installation
+cd into command-Line-Build.
+npm install
+
+Command to run 
+DEBUG=command-Line-Build: * npm start
+
+NOTE: You many need to change the app 
+reference to app.js in the {PROJECT_NAME}/bin/www script
+
+From:
+var app = require('../app');
+
+To:
+var app = require('../app.js');
