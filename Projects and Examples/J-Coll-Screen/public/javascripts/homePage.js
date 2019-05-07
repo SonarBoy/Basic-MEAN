@@ -5,7 +5,7 @@
 (function(){
 
     function Start(){
-        alert("Hello ALl");
+        //alert("Hello ALl");
 
     }
 

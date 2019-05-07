@@ -1,1 +1,3 @@
 Installation of JQuery.
+
+npm i JQuery
