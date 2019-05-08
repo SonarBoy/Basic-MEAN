@@ -1,0 +1,58 @@
+Commands and going through mongo installation:
+
+1: Downloads the authentic key from the keystore validating that your download is from the correct provider.
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+
+2:Creates a list file that mongo will use later in the installation processs
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+
+3:Updates your local packages.
+sudo apt-get update
+
+4:Install packages from the ubuntu app store with the latest version.
+sudo apt-get install -y mongodb-org
+
+RUNNING MONGO:
+
+1:Starts Mongo as a service.
+sudo service mongod start
+
+2: Verify mongo has started on the correct port. FIND the following line "[initandlisten] waiting for connections on port 27017"
+sudo less /var/log/mongodb/mongod.log
+
+3:Stopping mongo 
+sudo service mongod stop
+
+4:Using mongo on the command line
+mongo
+
+Mongo Commands:
+
+show dbs
+-Print a list of all databases on the server.
+
+use <db>
+Switch current database to <db>. The mongo shell variable db is set to the current database.
+
+show collections
+Print a list of all collections for current database. 
+
+db.collection.insert()
+inserts document into collection
+
+db.Vitamins.insert({"Name":"","Chemical Name":"","Solubility":"","Food Sources":"","Function":""});
+
+db.Vitamins.insert({"Name":"Vitamin A","Chemical Name":"all-trans-Retinol, Retinals, and alternative provitamin A-functioning Carotenoids including all-trans-beta-carotene","Solubility":"Fat","Food Sources":"Fish in general, liver and dairy products from plant origin as provitamin A / all-trans-beta-carotene: Orange, ripe yellow fruits, leafy  vegetables, carrots, pumpkin, squash, spinach;","Function":"Important for growth and development, for the maintenance of the immune system and good vision."})
+db.Vitamins.insert({"Name":"Vitamin B1","Chemical Name":"Thiamine","Solubility":"Water","Food Sources":"Pork, oatmeal, brown rice, vegetables, potatoes, liver, eggs","Function":"Used to treat thiamine deficiency which when severe can prove fatal.[12] In less severe cases, non-specific Signs include malaise, weight loss, irritability and confusion."});
+db.Vitamins.insert({"Name":"Vitamin B2","Chemical Name":"Riboflavin","Solubility":"Water","Food Sources":"Dairy products, bananas, green beans, asparagus","Function":"Used to prevent and treat riboflavin deficiency and prevent migraines.[1][3] It may be given by mouth or injection."});
+db.Vitamins.insert({"Name":"Vitamin B3","Chemical Name":"Niacin, Niacinamide, Nicotinamide riboside","Solubility":"Water","Food Sources":"Meat, fish, eggs, many vegetables, mushrooms, tree nuts","Function":"It helps the body to use proteins and fats, and it keeps the skin, hair, and nervous system healthy"});
+db.Vitamins.insert({"Name":"Vitamin B5","Chemical Name":"Pantothenic acid","Solubility":"Water","Food Sources":"Meat, broccoli, avocados","Function":"People take pantothenic acid for treating dietary deficiencies, acne, alcoholism, allergies, baldness, asthma, attention deficit-hyperactivity disorder (ADHD), autism, burning feet syndrome, yeast infections, heart failure, carpal tunnel syndrome, respiratory disorders, celiac disease, colitis, conjunctivitis, convulsions, and cystitis. It is also taken by mouth for dandruff, depression, diabetic nerve pain, enhancing immune function, improving athletic performance, tongue infections, gray hair, headache, hyperactivity, low blood sugar, trouble sleeping (insomnia), irritability, low blood pressure, multiple sclerosis, muscular dystrophy, muscular cramps in the legs associated with pregnancy or alcoholism, neuralgia, and obesity."});
+db.Vitamins.insert({"Name":"Vitamin B6","Chemical Name":"Pyridoxine, Pyridoxamine, Pyridoxal","Solubility":"Water","Food Sources":"Meat, vegetables, tree nuts, bananas","Function":"t is needed to maintain the health of nerves, skin, and red blood cells. Pyridoxine has been used to prevent or treat a certain nerve disorder (peripheral neuropathy) caused by certain medications (such as isoniazid)."});
+db.Vitamins.insert({"Name":"Vitamin B7","Chemical Name":"Biotin","Solubility":"Water","Food Sources":"Raw egg yolk, liver, peanuts, leafy green vegetables","Function":"Metabolism of nutrientsEnergy-producing metabolism Maintaining hair, skin and mucous membranes Nervous system function Psychological function"});
+db.Vitamins.insert({"Name":"Vitamin B9","Chemical Name":"Folic acid","Solubility":"Water","Food Sources":"Leafy vegetables, pasta, bread, cereal, liver","Function":"Folic acid acts by helping the body produce and maintain new cells. In particular, red blood cell formation is dependent upon adequate levels of this vitamin. Folic acid deficiency is a known cause of anemia in both adults and children."});
+db.Vitamins.insert({"Name":"Vitamin B12","Chemical Name":"Cyanocobalamin","Solubility":"Water","Food Sources":"Meat, poultry, fish, eggs, milk","Function":"Its role in the synthesis of myelin and in the maturation of developing red blood cells in the bone marrow."});
+db.Vitamins.insert({"Name":"Vitamin C","Chemical Name":"Ascorbic acid","Solubility":"Water","Food Sources":"Many fruits and vegetables, liver","Function":"Involved in the repair of tissue and the enzymatic production of certain neurotransmitters. It is required for the functioning of several enzymes and is important for immune system function. It also functions as an antioxidant."});
+db.Vitamins.insert({"Name":"Vitamin D","Chemical Name":"Cholecalciferol (D3), Ergocalciferol (D2)","Solubility":"Fat","Food Sources":"Lichen, eggs, liver, certain fish species such as sardines, certain mushroom species such as shiitake","Function":""});
+db.Vitamins.insert({"Name":"Vitamin E","Chemical Name":"Tocopherols, Tocotrienols","Solubility":"Fat","Food Sources":"Many fruits and vegetables, nuts and seeds, and seed oils","Function":"Many biological functions have been postulated, including a role as a fat-soluble antioxidant.In this role, vitamin E acts as a radical scavenger, delivering a hydrogen (H) atom to free radicals"});
+db.Vitamins.insert({"Name":"Vitamin K","Chemical Name":"Phylloquinone, Menaquinones","Solubility":"Fat","Food Sources":"Leafy green vegetables such as spinach; egg yolks; liver","Function":"Vitamin K plays a key role in helping the blood clot, preventing excessive bleeding"});
+
