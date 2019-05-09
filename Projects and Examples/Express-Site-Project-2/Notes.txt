@@ -56,3 +56,134 @@ db.Vitamins.insert({"Name":"Vitamin D","Chemical Name":"Cholecalciferol (D3), 
 db.Vitamins.insert({"Name":"Vitamin E","Chemical Name":"Tocopherols, Tocotrienols","Solubility":"Fat","Food Sources":"Many fruits and vegetables, nuts and seeds, and seed oils","Function":"Many biological functions have been postulated, including a role as a fat-soluble antioxidant.In this role, vitamin E acts as a radical scavenger, delivering a hydrogen (H) atom to free radicals"});
 db.Vitamins.insert({"Name":"Vitamin K","Chemical Name":"Phylloquinone, Menaquinones","Solubility":"Fat","Food Sources":"Leafy green vegetables such as spinach; egg yolks; liver","Function":"Vitamin K plays a key role in helping the blood clot, preventing excessive bleeding"});
 
+Installation of Mongoose
+
+npm i mongoose --save
+
+typings
+sudo npm i @types/mongoose --save
+
+More catchup to make things work (typings):
+sudo npm i @types/cookie-parser @types/body-parser @types/morgan morgan @types/node --save-dev
+
+
+mongo conection string:
+mongodb://username:password@hostname:port/database
+
+localhost connection string
+mongodb://localhost/mean-book
+
+
+Using Mongoose in your Application:
+
+APP.JS APP.JS APP.JS APP.JS APP.JS
+//Database setup
+var mongoose = require('mongoose');
+
+//Database configuration
+var db = require('./config/db');
+
+//Connecting mongoose to the local database
+mongoose.connect(db.URI);
+
+//Listening for errors and connection to server
+var MongoDB = mongoose.connection;
+MongoDB.on('error',console.error.bind(console,"Connection Error: "));
+MongoDB.once('open',() =>{
+  console.log("Connected to MongoDB...");
+});
+
++ This allows you to connect to the mongoose application.
++ First you will require the mongoose module.
++ Second you will require the config string for the mongoose connection.
++ Third you will create a mongo object to tie the connection to the application.
++ Fourth you will print out add the on function that will print out the error on the server side.
++ Fifth you will use the once method to allow for the server to spit out the fact that you have connected.
+
+APP.JS APP.JS APP.JS APP.JS APP.JS
+
+DB.JS DB.JS DB.JS DB.JS DB.JS DB.JS 
+
+module.exports = {
+    "URI":"mongodb://localhost/Nutrition"
+}
+
+DB.JS DB.JS DB.JS DB.JS DB.JS DB.JS 
+
++ this is the connection string in another file. use in ./config/db
++ Now you will create two different files in two different folders. 
+first ./model/contact.js and ./routes/contact.js 
+
+contact.js contact.js contact.js contact.js contact.js contact.js MODEL
+
+var mongoose = require('mongoose');
+
+//create model class
+var vitaminSchema = mongoose.Schema({
+    name: String,
+    chem_Name: String,
+    solubility: String
+},{
+    collection: "Vitamins"
+});
+
+module.exports = mongoose.model('test',vitaminSchema);
+
+contact.js contact.js contact.js contact.js contact.js contact.js MODEL
+
++ require the mongoose module 
++ you then create a model that will represent the data that is comming in in this case its 
++ the name chem_name and solubility and you will add the collection that you are pulling from in this case vitamins.
++ you then export the module to the name 'test'.
+
+contact.js contact.js contact.js contact.js contact.js contact.js ROUTES
+
+//Necessary for building the applicating
+var express = require('express');
+var router = express.Router();
+var mongoose = require('mongoose');
+
+//Schema: creating reference to database schema
+let vitamin = require('../models/contact.js');
+
+//GET OPERATION Simple show of all the vitamins
+
+router.get('/',(request,response,next) =>{
+    vitamin.find((error,vitaminList) => {
+        if(error){
+            return console.error(error);
+        }else{
+            console.log(vitaminList);
+
+            //Here we will later do a response.render
+
+            /*
+                res.render('contacts/index',{
+                    title: 'Vitamin List',
+                    vitaminList: vitaminList
+                })
+            */
+        }
+    });
+});
+
+module.exports = router;
+
+contact.js contact.js contact.js contact.js contact.js contact.js ROUTES
+
++ simple creation of the router in the first three lines while requiring mongoose
++ we then import the contact model from the models folder to use in our routes
++ we then create the root route and use the "vitamin" object to find what is in there 
++ setup the case for the error handling and if it finds an error it will dump it out to the console.
++ if it doesnt find an error wit will write out everything to a variable called "vitaminList" and we will print that out. 
+
+
+
+APP.JS APP.JS APP.JS APP.JS APP.JS
+
+
+var vitaminRouter = require('./routes/contact');
++ create the router object 
+
+app.use('/vitamin-list',vitaminRouter);
++ allow the application to use the url/vitamin-list to call the mongoose object to pull from the database.
