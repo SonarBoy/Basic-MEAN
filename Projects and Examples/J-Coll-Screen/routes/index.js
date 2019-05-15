@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var planet = require('../model/planet.js');
+var planet = require('../model/planet');
 
 /* GET home page. */
 router.get('/', function(request, response, next) {
@@ -31,12 +31,12 @@ router.get('/Planets',(request,response,next) => {
 
             //Here we will later do a response.render
 
-            /*
-                res.render('contacts/index',{
-                    title: 'Vitamin List',
-                    vitaminList: vitaminList
+            
+                response.render('planets/index',{
+                    title: 'Planet List',
+                    planetList: planetList
                 })
-            */
+            
     }
   });
 });
