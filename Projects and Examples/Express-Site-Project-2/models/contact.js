@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 
 //create model class
 var vitaminSchema = mongoose.Schema({
-    name: String,
-    chem_Name: String,
-    solubility: String
+    Name: String,
+    ChemicalName: String,
+    Solubility: String
 },{
     collection: "Vitamins"
 });
 
-module.exports = mongoose.model('test',vitaminSchema);
+module.exports = mongoose.model('vitamins',vitaminSchema);

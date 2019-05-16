@@ -17,12 +17,12 @@ router.get('/',(request,response,next) =>{
 
             //Here we will later do a response.render
 
-            /*
-                res.render('contacts/index',{
+            
+                response.render('Vitamins/index',{
                     title: 'Vitamin List',
                     vitaminList: vitaminList
                 })
-            */
+            
         }
     });
 });

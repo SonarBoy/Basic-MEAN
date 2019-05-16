@@ -28,33 +28,24 @@
         
             </div>    
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-offsetr-3 col-md-6"></div>
-        <br>
-        <table class="table table-bordered table-striped table-hover">
-            <tr>
-                <th class="text-center">Image</th>
-                <th class="text-center">Name</th>
-                <th class="text-center">Solubility</th>
-            </tr>
-
-                 <!--Repetable Template Row-->
-                 <% for (let count = 0; count < planetList.length; count++) { %>
-                    <tr>
-
-                        <td class="text-center"><img src="" alt="..." class="img-thumbnail"></td>
-                        <td class="text-center"><%= planetList[count].Name %></td>
-                        <td class="text-center"><%= planetList[count].Description %></td>
-                        
-                    </tr>
-                <% } %> 
-
-            
-        </table>
-    </div>
-</div>
-
+       <!--Repetable Template Row-->
+       <% for (let count = 0; count < planetList.length; count++) { %>
+            <div class="row mb-1 p-4">
+                    <div class="col-md-12">
+                      <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                          <strong class="d-inline-block mb-2 text-primary">Planet</strong>
+                          <h3 class="mb-0"><%= planetList[count].Name %></h3>
+                          <p class="card-text mb-auto"><%= planetList[count].Description %></p>
+                          <!--<a href="#" class="stretched-link">Continue reading</a>-->
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                        <img width="200" height="250" src="/images/Planets/<%= planetList[count].Name %>.jpg" alt="..." class="img-thumbnail">    
+                        </div>
+                      </div>
+                    </div>
+            </div>
+    <% } %> 
 
 </div>
 <% include ../partials/footer.ejs %>

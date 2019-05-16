@@ -1,0 +1,27 @@
+<% include ../partials/header.ejs %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offsetr-3 col-md-6"></div>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Chem-Name</th>
+                    <th class="text-center">Solubility</th>
+                </tr>
+
+                
+                <!--Repetable Template Row-->
+                <% for (let count = 0; count < vitaminList.length; count++) { %>
+                    <tr>
+                        <td class="text-center"><%= vitaminList[count].Name %></td>
+                        <td class="text-center"><%= vitaminList[count].ChemicalName %></td>
+                        <td class="text-center"><%= vitaminList[count].Solubility %></td>
+                    </tr>
+                <% } %> 
+            </table>
+        </div>
+    </div>
+
+<% include ../partials/footer.ejs %>

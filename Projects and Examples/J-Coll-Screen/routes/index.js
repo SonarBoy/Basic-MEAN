@@ -6,19 +6,19 @@ var planet = require('../model/planet');
 
 /* GET home page. */
 router.get('/', function(request, response, next) {
-  response.render('index', { title: 'Express', alertStyle:'Success'});
+  response.render('index', { title: 'Express: ', alertStyle:'Success'});
 });
 
 router.get('/About',function(request,response,next){
-  response.render('about',{about: 'About Page', alertStyle:'Info'});
+  response.render('about',{about: 'About Page: ', alertStyle:'Info'});
 });
 
 router.get('/Projects',function(request,response,next){
-  response.render('projects',{proj: 'This is the projects', alertStyle:'Warn'});
+  response.render('projects',{proj: 'Project: ', alertStyle:'Warn'});
 });
 
 router.get('/Services',function(request,response,next){
-  response.render('services',{service: 'This is the service', alertStyle:'Danger'});
+  response.render('services',{service: 'Service: ', alertStyle:'Danger'});
 });
 
 router.get('/Planets',(request,response,next) => {
@@ -27,11 +27,8 @@ router.get('/Planets',(request,response,next) => {
     if(error){
       return console.error(error);
     }else{
-      console.log(planetList);
-
             //Here we will later do a response.render
 
-            
                 response.render('planets/index',{
                     title: 'Planet List',
                     planetList: planetList
