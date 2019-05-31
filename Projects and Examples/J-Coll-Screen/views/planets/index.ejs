@@ -45,7 +45,8 @@
                         <div class="col-auto d-none d-lg-block">
                         <img width="200" height="250" src="/images/Planets/<%= planetList[count].Name %>.jpg" alt="..." class="img-thumbnail">    
                         </div>
-                        
+                         <a href="edit/<%= planetList[count]._id%>" class="btn btn-primary">Edit</a>
+                         <a href="delete/<%= planetList[count]._id%>" class="btn btn-primary">Delete</a>
                       </div>
                     </div>
             </div>

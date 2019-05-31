@@ -149,3 +149,5 @@ app.use('/vitamin-list',vitaminRouter);
 + allows you to use partials to make coding the main web page easier
 
 <% include ./partials/footer.ejs %>
+
+

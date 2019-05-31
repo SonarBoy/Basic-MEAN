@@ -66,5 +66,22 @@ router.post('/Planets-Add',(request,response,next) => {
 
 });
 
+router.get('/edit/:id',(request,response,next) => {
+  let id = request.params.id;
+
+  planetModel.findById(id, (error, planetObject) => {
+
+    if(error){
+      console.log(error);
+      response.end(error);
+    }else{
+      response.render('planets/edit',{
+        title: 'Edit Object',
+        planet: planetObject
+      });
+    }
+  });
+});
+
 module.exports = router;
 
