@@ -1,3 +1,10 @@
+Start and Stop mongo
+
+sudo service mongod start
+sudo service mongod stop
+
+
+
 Installation of JQuery.
 
 npm i JQuery

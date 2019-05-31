@@ -28,6 +28,8 @@
         
             </div>    
 
+       <a class="btn btn-primary btn-sm" href="/Planets-Add" role="button">Add</a>
+
        <!--Repetable Template Row-->
        <% for (let count = 0; count < planetList.length; count++) { %>
             <div class="row mb-1 p-4">
@@ -37,11 +39,13 @@
                           <strong class="d-inline-block mb-2 text-primary">Planet</strong>
                           <h3 class="mb-0"><%= planetList[count].Name %></h3>
                           <p class="card-text mb-auto"><%= planetList[count].Description %></p>
+                          
                           <!--<a href="#" class="stretched-link">Continue reading</a>-->
                         </div>
                         <div class="col-auto d-none d-lg-block">
                         <img width="200" height="250" src="/images/Planets/<%= planetList[count].Name %>.jpg" alt="..." class="img-thumbnail">    
                         </div>
+                        
                       </div>
                     </div>
             </div>
