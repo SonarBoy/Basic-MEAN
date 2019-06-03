@@ -47,10 +47,11 @@ router.get('/Planets-Add',(request,response,next) => {
 
 });
 
+
+//THIS IS THE RETRIVAL OF THE DATA FROM THE ADD FORM TO 
+//BE THEN PUT INTO THE DATABASE
 router.post('/Planets-Add',(request,response,next) => {
 
-  //THIS IS THE RETRIVAL OF THE DATA FROM THE ADD FORM TO 
-  //BE THEN PUT INTO THE DATABASE
   let newObject  = planetModel({"Name": request.body.Name,
   "Description":request.body.Description});
 
@@ -66,6 +67,8 @@ router.post('/Planets-Add',(request,response,next) => {
 
 });
 
+//GET REQUEST FOR THE EDIT PAGE NOTE THAT BOOTSTRAP DOES NOT WORK CURRENTLY ON 
+//THIS LEVEL OF ROUTE.
 router.get('/edit/:id',(request,response,next) => {
   let id = request.params.id;
 
@@ -79,6 +82,28 @@ router.get('/edit/:id',(request,response,next) => {
         title: 'Edit Object',
         planet: planetObject
       });
+    }
+  });
+});
+
+
+//POST REQUEST TO UPDATE THE DATA BASE FROM THE EDIT PAGE
+router.post('/edit/:id',(request,response,next) =>{
+  let id = request.params.id;
+
+  let updatedPlanet  = planetModel({
+    "_id" : id,
+    "Name": request.body.Name,
+    "Description" : request.body.Description
+  });
+
+  planetModel.update({_id:id},updatedPlanet,(error) =>{
+    if(error){
+      console.log(error);
+      response.end(error);
+    }else{
+      //refresh to the planet list
+      response.redirect('/Planets');
     }
   });
 });
