@@ -1,3 +1,5 @@
+
+PLANETS 
 db.SolarSystem.insert({Name:"Mercury",Description:"Mercury (0.4 AU from the Sun) is the closest planet to the Sun and on average, all seven other planets.The smallest planet in the Solar System (0.055 M⊕), Mercury has no natural satellites. Besides impact craters, its only known geological features are lobed ridges or rupes that were probably produced by a period of contraction early in its history. Mercury's very tenuous atmosphere consists of atoms blasted off its surface by the solar wind. Its relatively large iron core and thin mantle have not yet been adequately explained. Hypotheses include that its outer layers were stripped off by a giant impact, or that it was prevented from fully accreting by the young Sun's energy."})
 db.SolarSystem.insert({Name:"Venus",Description:"Venus (0.7 AU from the Sun) is close in size to Earth (0.815 M⊕) and, like Earth, has a thick silicate mantle around an iron core, a substantial atmosphere, and evidence of internal geological activity. It is much drier than Earth, and its atmosphere is ninety times as dense. Venus has no natural satellites. It is the hottest planet, with surface temperatures over 400 °C (752 °F), most likely due to the amount of greenhouse gases in the atmosphere. No definitive evidence of current geological activity has been detected on Venus, but it has no magnetic field that would prevent depletion of its substantial atmosphere, which suggests that its atmosphere is being replenished by volcanic eruptions."})
 db.SolarSystem.insert({Name:"Earth",Description:"Earth (1 AU from the Sun) is the largest and densest of the inner planets, the only one known to have current geological activity, and the only place where life is known to exist. Its liquid hydrosphere is unique among the terrestrial planets, and it is the only planet where plate tectonics has been observed. Earth's atmosphere is radically different from those of the other planets, having been altered by the presence of life to contain 21% free oxygen. It has one natural satellite, the Moon, the only large satellite of a terrestrial planet in the Solar System."})
@@ -7,24 +9,25 @@ db.SolarSystem.insert({Name:"Saturn",Description:"Saturn (9.5 AU), distinguished
 db.SolarSystem.insert({Name:"Uranus",Description:"Uranus (19.2 AU), at 14 M⊕, is the lightest of the outer planets. Uniquely among the planets, it orbits the Sun on its side; its axial tilt is over ninety degrees to the ecliptic. It has a much colder core than the other giant planets and radiates very little heat into space. Uranus has 27 known satellites, the largest ones being Titania, Oberon, Umbriel, Ariel, and Miranda."})
 db.SolarSystem.insert({Name:"Neptune",Description:"Neptune (30.1 AU), though slightly smaller than Uranus, is more massive (17 M⊕) and hence more dense. It radiates more internal heat, but not as much as Jupiter or Saturn.Neptune has 14 known satellites. The largest, Triton, is geologically active, with geysers of liquid nitrogen. Triton is the only large satellite with a retrograde orbit. Neptune is accompanied in its orbit by several minor planets, termed Neptune trojans, that are in 1:1 resonance with it."})
 
+db.CelestialObjects.insert({Name:"KUIPER BELT",Description:"The Kuiper Belt is similar to the asteroid belt found between the orbits of Mars and Jupiter, but it is 20 times as wide and somewhere between 20-200 times more massive. The ices are frozen volatiles that are made up of methane, nitrogen, ammonia and water."});
+db.CelestialObjects.insert({Name:"The Hoba Meteorite",Description:"Weighing in at a whopping 60 tons, this is the largest known meteorite on the planet. It can be find right where it originally impacted in Namibia, Africa and is mostly iron with nickel and other trace elements. It struck down over 80,000 years ago and wasn’t discovered until 1920, but is now a National Monument with thousands of visitors every year."});
+db.CelestialObjects.insert({Name:"The Willamette Meteorite",Description:"This is the largest meteorite ever found in the United States at 15.5 tons and stands ten feet tall. It is a pitted iron meteorite which is believed to be the remains of the iron core of a planet destroyed in a collision billions of years ago. It landed around 1,000 years ago and was discovered by Westerners in 1902 – although it was long revered by the Native American Clackamas tribe as a healing source they called Tomanowos."});
+db.CelestialObjects.insert({Name:"The Sylacauga/Hodges Meteorite.",Description:"Sometime in the fall of 1954, a 34-year old woman named Ann Hodges was napping on her sofa when an 8.5lb meteorite smashed through her window and struck her on the hip. She was bruised, but otherwise unharmed by the meteorite her neighbours described as a fireball shooting through the sky."});
+db.CelestialObjects.insert({Name:"The Allende Meteorite.",Description:"This meteorite crashed to Earth over Mexico in 1969 and was originally about the size of a car before it broke into hundreds of fragments that weighed several tons in total. It’s one of the most studied meteorites of all time and a prime example of a carbonaceous chondrite. Dating back to the formation of the Sun and Planets 4.6 Billion Years ago, they are among the most primitive solar system materials known to man and are made of silicates, oxides, sulfides, water, organic compounds and various different minerals."});
+db.CelestialObjects.insert({Name:"Halley’s Comet.",Description:"In 1705, while studying the orbits of several known comets, Edmond Halley found that the comet observed in 1531, 1607 and 1682 was one in the same. As a result of Halley’s discovery, the comet was named after him. Halley’s Comet is visible every 75 to 76 years."});
+db.CelestialObjects.insert({Name:"Comet Hale-Bopp.",Description:"Comet Hale-Bopp is best known to most people for the much publicized Californian cult who believed the comet to be a spacecraft. Comet Hale-Bopp was last visible in 1997 and will not be visible again for approximately 2,300 years. It is named after its co-discoverers, Alan Hale and Thomas Bopp."});
+db.CelestialObjects.insert({Name:"Comet Shoemaker-Levy 9.",Description:"Shoemaker-Levy 9, also known as SL 9, was a string of comets that was captured by the gravity of Jupiter and subsequently began an orbit about the planet. The orbit of SL 9 assumed about Jupiter was, however, highly irregular and as a result of this irregularity SL 9 crashed into Jupiter in a brilliant display during the week of July 16, 1994. Shoemake-Levy 9 is named after its discoverers, Gene Shoemaker, Carolyon Shoemaker and David Levy."});
 
 
-GET / 304 9.412 ms - -
-GET /stylesheets/style.css 304 1.465 ms - -
-GET /images/Galaxy.jpg 304 1.736 ms - -
-GET /images/carousel-2.jpg 304 1.779 ms - -
-GET /bootstrap/dist/css/bootstrap.min.css 304 2.891 ms - -
-GET /jquery/dist/jquery.min.js 304 0.547 ms - -
-GET /bootstrap/dist/js/bootstrap.min.js 304 0.538 ms - -
-GET /javascripts/homePage.js 304 0.403 ms - -
-GET /images/Milk.jpg 304 0.342 ms - -
+db.Galaxy.insert({Name:"ANTENNAE GALAXY",Designation:"NGC 4038 and NGC 4039",Type:"Colliding Spiral Galaxies",Diameter:"About 360,000 light years",DistanceFromEarth:"45 million light years",Mass:"unknown",Constellation:"Corvus",Discovered:"1785 by William and Caroline Herschel (siblings)",Stars:"300 billion"});
 
-GET / 304 9.412 ms - -
-GET /stylesheets/style.css 304 1.465 ms - -
-GET /images/Galaxy.jpg 304 1.736 ms - -
-GET /images/carousel-2.jpg 304 1.779 ms - -
-GET /bootstrap/dist/css/bootstrap.min.css 304 2.891 ms - -
-GET /jquery/dist/jquery.min.js 304 0.547 ms - -
-GET /bootstrap/dist/js/bootstrap.min.js 304 0.538 ms - -
-GET /javascripts/homePage.js 304 0.403 ms - -
-GET /images/Milk.jpg 304 0.342 ms - -
+db.Galaxy.insert({Name:"LARGE MAGELLANIC CLOUD PROFILE",Designation:"LMC",Type:"Disrupted Barred Spiral",Diameter:"14,000 lightyears",DistanceFromEarth:"163,000 lightyears",Mass:"10 billion solar masses",Constellation:"Dorado & Mensa",Discovered:"First described in 964 A.D.",Stars:"30 billion"});
+
+db.Galaxy.insert({Name:"PINWHEEL GALAXY",Designation:"M101, Messier 101, or NGC 5457",Type:"Spiral Galaxy",Diameter:" About 170,000 light years",DistanceFromEarth:"21 million light years",Mass:"1,000 billion M",Constellation:"Ursa Major (The Big Dipper)",Discovered:"1781 by astronomer Pierre Méchain",Stars:"At least 1 trillion."});
+
+db.Galaxy.insert({Name:"TRIANGULUM GALAXY",Designation:"Messier 33 or NGC 598",Type:"Spiral Galaxy",Diameter:"50,000 light-years",DistanceFromEarth:"< 3,000,000 light-years",Mass:"50,000,000 times the mass of the Sun",Constellation:"Triangulum Constellation",Discovered:"1764 (officially)",Stars:"40,000,000,000 ( 40 billion )"});
+
+db.Galaxy.insert({Name:"SOMBRERO GALAXY",Designation:"NGC 4594 or M104",Type:"Spiral",Diameter:"50,000 ly",DistanceFromEarth:"29 Mly",Mass:"800 billion M☉;☉ = the mass of the sun",Constellation:"Virgo",Discovered:"1781",Stars:"Several hundred billion"});
+
+db.Galaxy.insert({Name:"WHIRLPOOL GALAXY",Designation:"M51, M51A, or NGC 5194",Type:"Spiral",Diameter:"60,000 lightyears",DistanceFromEarth:"23 million lightyears",Mass:"160 billion solar masses",Constellation:"Canes Venatici",Discovered:"1773",Stars:"100 billion"});
+
