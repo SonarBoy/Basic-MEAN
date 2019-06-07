@@ -28,9 +28,62 @@ module.exports.displayCelestialObjectList = (request,response,next) => {
 }
 
 //STEP 4: First GET request to the add Celestial Object
-module.exports.addCelestialObjectsPage = (request,response,next) =>{
-    response.render('celesrialObjects/add',{
+module.exports.addCelestialObjectsDisplay = (request,response,next) =>{
+    response.render('celestialObjects/add',{
         title:'Add New Celestial Object'
+    });
+}
+
+//STEP 5: POST request to add a new planet to the celestialObjects collection
+module.exports.addCelestialObjects = (request,response,next) =>{
+    let newObject = celestialObjectModel({"Name":request.body.Name,
+    "Description":request.body.Description});
+
+    celestialObjectModel.create(newObject, (error,celestialObjectModel) =>{
+
+        if(error){
+            console.log(error);
+            response.end(error);
+        }else{
+            response.redirect('ObjectList');
+        }
+    });
+
+}
+
+//STEP 5: Specify the POST request to delete the celestial object.
+module.exports.deleteCelestialObject = (request,response,next) => {
+    let id = request.params.id;
+
+    celestialObjectModel.remove({_id:id},(error) =>{
+
+        if(error){
+            console.log(error);
+            response.send(error);
+        }else{
+            //JESUS THANK YOU FOR HELPING ME WITH THIS.
+            //NOTE:WHEN SPECIFYING REDIRECTION WITH MULTIPLE ROUTER OBJECTS
+            //THINK ABOUT IT LIKE A DIRECTORY STRUCTURE WHEN PROGRAMMING IT.
+            response.redirect('../ObjectList');
+        }
+    });
+}
+
+module.exports.editCelestialObjectGET = (request,response,next) =>{
+
+    let id = request.params.id;
+
+    celestialObjectModel.findById(id, (error,celestialObjectReturn) =>{
+
+        if(error){
+            console.log(error);
+            response.end(error);
+        }else{
+            response.render('celestialObjects/edit',{
+                title:"Edit Celestial Object",
+                celestialObject: celestialObjectReturn
+            });
+        }
     });
 }
 

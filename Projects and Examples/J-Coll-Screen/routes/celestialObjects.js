@@ -9,11 +9,21 @@ var celestialObjectController = require('../controllers/celestialObjectControlle
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     res.send('respond with a resource from the celestial object colletion');
-});
+}); 
 
 router.get('/ObjectList',celestialObjectController.displayCelestialObjectList);
 
-router.get('CelestialObjects-Add',celestialObjectController.addCelestialObjectsPage);
+//STEP 4: GET REQUEST FOR ADDITIONS TO COLLECTION
+router.get('/CelestialObjects-Add',celestialObjectController.addCelestialObjectsDisplay);
 
-//STEP 3: Export the routers functionality to be used by the application.
+//STEP 5: POST REQUEST FOR ADDITIONS TO COLLECTION
+router.post('/CelestialObjects-Add',celestialObjectController.addCelestialObjects);
+
+//STEP 6: GET REQUEST FOR DELETION OF CELESTIAL OBJECT
+router.get('/delete/:id',celestialObjectController.deleteCelestialObject);
+
+router.get('/edit/:id',celestialObjectController.editCelestialObjectGET);
+//STEP :EXPORT THE ROUTER MODULES TO THE ROUTER OBJECT
 module.exports = router;
+
+
