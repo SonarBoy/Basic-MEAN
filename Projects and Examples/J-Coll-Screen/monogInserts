@@ -18,6 +18,77 @@ db.CelestialObjects.insert({Name:"Halley’s Comet.",Description:"In 1705, while
 db.CelestialObjects.insert({Name:"Comet Hale-Bopp.",Description:"Comet Hale-Bopp is best known to most people for the much publicized Californian cult who believed the comet to be a spacecraft. Comet Hale-Bopp was last visible in 1997 and will not be visible again for approximately 2,300 years. It is named after its co-discoverers, Alan Hale and Thomas Bopp."});
 db.CelestialObjects.insert({Name:"Comet Shoemaker-Levy 9.",Description:"Shoemaker-Levy 9, also known as SL 9, was a string of comets that was captured by the gravity of Jupiter and subsequently began an orbit about the planet. The orbit of SL 9 assumed about Jupiter was, however, highly irregular and as a result of this irregularity SL 9 crashed into Jupiter in a brilliant display during the week of July 16, 1994. Shoemake-Levy 9 is named after its discoverers, Gene Shoemaker, Carolyon Shoemaker and David Levy."});
 
+db.CelestialObjects.updateOne(
+   { Name:"KUIPER BELT" },
+   {
+     $set: { Name:"KUIPER-BELT",Description:"The Kuiper Belt is similar to the asteroid belt found between the orbits of Mars and Jupiter, but it is 20 times as wide and somewhere between 20-200 times more massive. The ices are frozen volatiles that are made up of methane, nitrogen, ammonia and water." },
+     $currentDate: { lastModified: true }
+   }
+)
+
+db.CelestialObjects.updateOne(
+   { Name:"The Hoba Meteorite" },
+   {
+     $set: { Name:"The-Hoba-Meteorite",Description:"Weighing in at a whopping 60 tons, this is the largest known meteorite on the planet. It can be find right where it originally impacted in Namibia, Africa and is mostly iron with nickel and other trace elements. It struck down over 80,000 years ago and wasn’t discovered until 1920, but is now a National Monument with thousands of visitors every year." },
+     $currentDate: { lastModified: true }
+   }
+)
+
+db.CelestialObjects.updateOne(
+   { Name:"The Willamette Meteorite" },
+   {
+     $set: { Name:"The-Willamette-Meteorite",Description:"This is the largest meteorite ever found in the United States at 15.5 tons and stands ten feet tall. It is a pitted iron meteorite which is believed to be the remains of the iron core of a planet destroyed in a collision billions of years ago. It landed around 1,000 years ago and was discovered by Westerners in 1902 – although it was long revered by the Native American Clackamas tribe as a healing source they called Tomanowos." },
+     $currentDate: { lastModified: true }
+   }
+)
+
+db.CelestialObjects.updateOne(
+   { Name:"The Sylacauga/Hodges Meteorite." },
+   {
+     $set: { Name:"The-Sylacauga-Hodges-Meteorite",Description:"Sometime in the fall of 1954, a 34-year old woman named Ann Hodges was napping on her sofa when an 8.5lb meteorite smashed through her window and struck her on the hip. She was bruised, but otherwise unharmed by the meteorite her neighbours described as a fireball shooting through the sky."},
+     $currentDate: { lastModified: true }
+   }
+)
+
+db.CelestialObjects.updateOne(
+   { Name:"The Allende Meteorite." },
+   {
+     $set: {Name:"The-Allende-Meteorite",Description:"This meteorite crashed to Earth over Mexico in 1969 and was originally about the size of a car before it broke into hundreds of fragments that weighed several tons in total. It’s one of the most studied meteorites of all time and a prime example of a carbonaceous chondrite. Dating back to the formation of the Sun and Planets 4.6 Billion Years ago, they are among the most primitive solar system materials known to man and are made of silicates, oxides, sulfides, water, organic compounds and various different minerals."},
+     $currentDate: { lastModified: true }
+   }
+)
+
+db.CelestialObjects.updateOne(
+   { Name:"The Allende Meteorite." },
+   {
+     $set: {Name:"The-Allende-Meteorite",Description:"This meteorite crashed to Earth over Mexico in 1969 and was originally about the size of a car before it broke into hundreds of fragments that weighed several tons in total. It’s one of the most studied meteorites of all time and a prime example of a carbonaceous chondrite. Dating back to the formation of the Sun and Planets 4.6 Billion Years ago, they are among the most primitive solar system materials known to man and are made of silicates, oxides, sulfides, water, organic compounds and various different minerals."},
+     $currentDate: { lastModified: true }
+   }
+)
+
+db.CelestialObjects.updateOne(
+   { Name:"Halley’s Comet." },
+   {
+     $set: {Name:"Halley’s-Comet",Description:"In 1705, while studying the orbits of several known comets, Edmond Halley found that the comet observed in 1531, 1607 and 1682 was one in the same. As a result of Halley’s discovery, the comet was named after him. Halley’s Comet is visible every 75 to 76 years."},
+     $currentDate: { lastModified: true }
+   }
+)
+
+db.CelestialObjects.updateOne(
+   { Name:"Comet Hale-Bopp." },
+   {
+     $set: {Name:"Comet-Hale-Bopp",Description:"Comet Hale-Bopp is best known to most people for the much publicized Californian cult who believed the comet to be a spacecraft. Comet Hale-Bopp was last visible in 1997 and will not be visible again for approximately 2,300 years. It is named after its co-discoverers, Alan Hale and Thomas Bopp."},
+     $currentDate: { lastModified: true }
+   }
+)
+
+db.CelestialObjects.updateOne(
+   { Name:"Comet Shoemaker-Levy 9." },
+   {
+     $set: {Name:"Comet-Shoemaker-Levy-9",Description:"Shoemaker-Levy 9, also known as SL 9, was a string of comets that was captured by the gravity of Jupiter and subsequently began an orbit about the planet. The orbit of SL 9 assumed about Jupiter was, however, highly irregular and as a result of this irregularity SL 9 crashed into Jupiter in a brilliant display during the week of July 16, 1994. Shoemake-Levy 9 is named after its discoverers, Gene Shoemaker, Carolyon Shoemaker and David Levy."},
+     $currentDate: { lastModified: true }
+   }
+)
 
 db.Galaxy.insert({Name:"ANTENNAE GALAXY",Designation:"NGC 4038 and NGC 4039",Type:"Colliding Spiral Galaxies",Diameter:"About 360,000 light years",DistanceFromEarth:"45 million light years",Mass:"unknown",Constellation:"Corvus",Discovered:"1785 by William and Caroline Herschel (siblings)",Stars:"300 billion"});
 

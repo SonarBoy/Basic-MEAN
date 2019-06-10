@@ -47,8 +47,8 @@
             <a href="#" class="alert-link">...</a>
           </div>
           <% } else if(alertStyle == "Warn") { %>
-          <div class="alert alert-warning" role="alert">
-            <a href="/Planets" class="alert-link">You can find the link here.</a>
+          <div class="projectLink" role="alert">
+            <h2><a href="/Planets" class="alert-link">You can find the link here...</a></h2>
           </div>
           <% } else if(alertStyle == "Danger") { %>
           <div class="alert alert-danger" role="alert">
@@ -58,13 +58,7 @@
 
         </div>
         <div class="col-md-5">
-          <!--svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="/images/Planet-Flex.jpg" 
-          preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Solar System">
-          <title>Planets in the solar system.</title>
-          <rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-        
-        </svg>-->
-        <img width="500" height="500" src="/images/Planet-Flex.jpg" alt="Planets" class="img-thumbnail">    
+        <img width="500" height="500" src="/images/Planet-Flex.jpg" alt="Planets" class="img-thumbnail rounded lineItem">    
         </div>
       </div>
 
@@ -73,7 +67,7 @@
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading"><%= proj %> <span class="text-muted">Celestial Objects Example</span></h2>
-          <p class="lead">This is a simple Mongo pull that describes Celestial</p>
+          <p class="lead">This is a simple Mongo pull that describes Celestial Objects.</p>
         
           <% if (alertStyle == "Success") { %>
             <div class="alert alert-success" role="alert">
@@ -84,8 +78,8 @@
             <a href="" class="alert-link">...</a>
           </div>
           <% } else if(alertStyle == "Warn") { %>
-          <div class="alert alert-warning" role="alert">
-            <a href="celestialObjects/ObjectList" class="alert-link">You can find the link here.</a>
+          <div class="projectLink" role="alert">
+            <h2><a href="celestialObjects/ObjectList" class="alert-link">You can find the link here...</a></h2>
           </div>
           <% } else if(alertStyle == "Danger") { %>
           <div class="alert alert-danger" role="alert">
@@ -95,17 +89,16 @@
           
         </div>
         <div class="col-md-5 order-md-1">
-          <!--<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>-->
-
-          <img width="500" height="500" src="/images/CelestialObjects-Flex.jpg" alt="Planets" class="img-thumbnail">
+          <img width="500" height="500" src="/images/CelestialObjects-Flex.jpg" alt="Planets" class="img-thumbnail rounded lineItem">
         </div>
       </div>
+
+      <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading"><%= proj %> <span class="text-muted">See for yourself.</span></h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-
           <% if (alertStyle == "Success") { %>
             <div class="alert alert-success" role="alert">
               <a href="#" class="alert-link">...</a>
@@ -115,8 +108,8 @@
             <a href="#" class="alert-link">...</a>
           </div>
           <% } else if(alertStyle == "Warn") { %>
-          <div class="alert alert-warning" role="alert">
-            <a href="#" class="alert-link">...</a>
+          <div class="alert projectLink" role="alert">
+          <h2><a href="#" class="alert-link">...</a></h2>
           </div>
           <% } else if(alertStyle == "Danger") { %>
           <div class="alert alert-danger" role="alert">
@@ -125,8 +118,9 @@
           <% } %>
           
         </div>
-        <div class="col-md-5">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <div class="col-md-5 ">
+          
+          <img width="500" height="500" src="/images/Godentity.jpeg" alt="Planets" class="img-thumbnail lineItem">
         </div>
       </div>
 

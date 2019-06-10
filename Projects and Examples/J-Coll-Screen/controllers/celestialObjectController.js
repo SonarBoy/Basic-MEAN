@@ -87,3 +87,26 @@ module.exports.editCelestialObjectGET = (request,response,next) =>{
     });
 }
 
+module.exports.editCelestialObjectPOST = (request,response,next) => {
+    let id = request.params.id;
+
+    let updatedCelestialObject = celestialObjectModel({
+        "_id": id,
+        "Name": request.body.Name,
+        "Description": request.body.Description
+    });
+
+    celestialObjectModel.update({
+        _id:id
+    }, updatedCelestialObject, (error) =>{
+
+        if(error){
+            console.log(error);
+            response.end(error);
+        }else{
+            response.redirect('../ObjectList');
+        }
+
+    });
+}
+

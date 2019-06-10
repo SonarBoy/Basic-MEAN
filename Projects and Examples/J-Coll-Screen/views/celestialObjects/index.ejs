@@ -34,8 +34,8 @@
     <% for (let count = 0; count < celestialObjectList.length; count++) { %>
             <div class="row mb-1 p-4">
                     <div class="col-md-12">
-                    <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
+                    <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+                        <div class="col p-4 d-flex flex-column position-static rowItemMongo">
                         <strong class="d-inline-block mb-2 text-primary">Celestial Object:</strong>
                         <h3 class="mb-0"><%= celestialObjectList[count].Name %></h3>
                         <p class="card-text mb-auto"><%= celestialObjectList[count].Description %></p>
@@ -45,8 +45,8 @@
                         </span>
                         <!--<a href="#" class="stretched-link">Continue reading</a>-->
                         </div>
-                        <div class="col-auto d-none d-lg-block">
-                        <img width="200" height="250" src="/images/Planets/<%= celestialObjectList[count].Name %>.jpg" alt="..." class="img-thumbnail">    
+                        <div class="col-auto d-none d-lg-block rowItemMongo">
+                        <img width="200" height="250" src="/images/celestialObjects/<%= celestialObjectList[count].Name %>.jpeg" alt="..." class="img-thumbnail lineItem">    
                         </div>
                         
                     </div>
