@@ -36,15 +36,22 @@ module.exports.addCelestialObjectsDisplay = (request,response,next) =>{
 
 //STEP 5: POST request to add a new planet to the celestialObjects collection
 module.exports.addCelestialObjects = (request,response,next) =>{
+
+    //Create a new object that is of type celestial object and 
+    //populate it with the variables from the request.
     let newObject = celestialObjectModel({"Name":request.body.Name,
     "Description":request.body.Description});
 
+    //Call the create function passing on the newObject and the model 
+    //you want to add it into.
     celestialObjectModel.create(newObject, (error,celestialObjectModel) =>{
 
         if(error){
+            //if there is an error spit it out to the console.
             console.log(error);
             response.end(error);
         }else{
+            //Otherwise reditect the navigation to the ObjectList.
             response.redirect('ObjectList');
         }
     });
