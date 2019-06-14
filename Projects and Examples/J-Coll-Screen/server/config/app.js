@@ -4,15 +4,23 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//Install Modules for Authentication
+var session = require('express-session');
+var passport = require('passport');
+var passportLocal = require('passport-local');
+var localStrategy = passportLocal.Strategy;
+var flash = require('connect-flash');
+
+
 //STEP 1: Inculde the Routes to be used for the function
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var celestialObjectRouter = require('./routes/celestialObjects');
-var galaxyRouter = require('./routes/galaxyRouter');
+var indexRouter = require('../routes/index');
+var usersRouter = require('../routes/users-old');
+var celestialObjectRouter = require('../routes/celestialObjects');
+var galaxyRouter = require('../routes/galaxyRouter');
 
 //STEP 2: Here we inculde the mongoose model and its configuration file
 var mongoose = require('mongoose');
-var db = require('./config/db');
+var db = require('./db');
 
 //STEP 3: Connect to the URI you specified in the db.js file
 mongoose.connect(db.URI);
@@ -29,19 +37,45 @@ MongoDB.once('open',() =>{
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'node_modules')));
+app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+
+//setup for sessions
+app.use(session({
+  secret:"SomeSecret", //USE TO SIGN THE SESSION ID COOKIE
+  saveUninitialize: true,
+  resave: true
+}));
+
+// Initialise passport and flash
+app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//passport user configuration
+
+var userModel = require('../model/User');
+var User = userModel.User; //Alias to the user model
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 
 //STEP 5: List all the routers you are going to use in your web application.
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter);
 app.use('/celestialObjects',celestialObjectRouter);
 app.use('/galaxy',galaxyRouter);
 

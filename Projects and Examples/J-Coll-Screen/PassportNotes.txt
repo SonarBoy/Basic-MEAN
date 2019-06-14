@@ -1,0 +1,8 @@
+- Passport is a Node module that uses the middleware
+  design pattern to authenticate.
+
+- Allows for various authentication methods called
+  stratigies.Local and OAuth
+
+  
+

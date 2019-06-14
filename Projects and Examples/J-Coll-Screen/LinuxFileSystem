@@ -1,0 +1,26 @@
+Linux Cares about filename capitalization
+
+FHS: Filesystem Hierarchy Standard.
+
+/bin: most basic binaries like "ls" and "cat" applications
+/sbin: system binaries that the administrator uses.
+/boot: contains your boot loaders
+/dev: this is where your devices live example disk
+      dev/sda think also of serial ports. Partitions /dev/sda1 /dev/sda2
+/etc: edit to configure all your system wide confiurations are stored.
+/lib: storage of libraries that the binaries use
+/mnt: place that other drives are mounted to.
+/media: similar to mount but the distro does it automatically.
+/opt: manually installed software is installed here.
+/proc: sudo files that contain information about sudo processes and resources.
+/root: root users home folder.
+/run: temfs file system. used to store processes early in the runtime to store process 
+      information.
+/snap: self-contained applications usually used to run on ubuntu.
+/srv: where service data is stored. if you run an ftp you will store the ftp files here.
+/sys: system folder way to interact with the kernel. created when the system boots up.
+/tmp: files saved here are temporary used as a recovery point if applications close abruptly.
+/usr: user application space. unix system resource no esential applications
+/var: variable directory. holds files or directories expected to grow in size.
+/home: where each user stores their own personal files and documents.
+hidden directories start with . cntrl + h exposes them.

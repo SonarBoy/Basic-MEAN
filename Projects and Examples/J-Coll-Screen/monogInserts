@@ -102,3 +102,5 @@ db.Galaxy.insert({Name:"SOMBRERO GALAXY",Designation:"NGC 4594 or M104",Type:"Sp
 
 db.Galaxy.insert({Name:"WHIRLPOOL GALAXY",Designation:"M51, M51A, or NGC 5194",Type:"Spiral",Diameter:"60,000 lightyears",DistanceFromEarth:"23 million lightyears",Mass:"160 billion solar masses",Constellation:"Canes Venatici",Discovered:"1773",Stars:"100 billion"});
 
+db.PassportUsers({Name:"John",Password:"Password"});
+

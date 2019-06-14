@@ -42,5 +42,23 @@ router.post('/edit/:id',planetController.editPlanetPOST);
 //ROUTER DELETE FUNCTIONALITY
 router.get('/delete/:id',planetController.deletePlanet);
 
+
+//PASSPORT ADITION
+
+//get login page
+router.get('/login',planetController.displayLoginPage);
+
+//post request to process login
+router.post('/login',planetController.processLoginPage);
+
+//display user registration page.
+router.get('/register',planetController.displayRegisterPage);
+
+//post request to process the user registration
+router.post('/register',planetController.processRegisterPage);
+
+//get request to peform user logout
+router.get('/logout',planetController.performLogout);
+
 module.exports = router;
 
