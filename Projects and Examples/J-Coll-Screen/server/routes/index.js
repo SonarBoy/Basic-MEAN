@@ -3,22 +3,39 @@ var router = express.Router();
 
 var planetController = require('../controllers/planetController');
 
+var passport = require('passport');
+
+
+//CHECKING TO SEE IF THE LOGIN IS PRESENT.
+function requireAuth(request,response,next){
+  console.log(request.user);
+  //check to see if the user is logged in.
+  if(!request.isAuthenticated() || request.user.username != "Joshua"){
+    return response.redirect('/login');
+  }
+  next();
+  
+}
 
 /* GET home page. */
 router.get('/', function(request, response, next) {
-  response.render('index', { title: 'Express: ', alertStyle:'Success'});
+  response.render('index', { title: 'Express: ', alertStyle:'Success',
+  displayName: request.user ? request.user.displayName : ""});
 });
 
 router.get('/About',function(request,response,next){
-  response.render('about',{about: 'About Page: ', alertStyle:'Info'});
+  response.render('about',{about: 'About Page: ', alertStyle:'Info',
+  displayName: request.user ? request.user.displayName : ""});
 });
 
-router.get('/Projects',function(request,response,next){
-  response.render('projects',{proj: 'Project: ', alertStyle:'Warn'});
+router.get('/Projects',requireAuth ,function(request,response,next){
+  response.render('projects',{proj: 'Project: ', alertStyle:'Warn',
+  displayName: request.user ? request.user.displayName : ""});
 });
 
 router.get('/Services',function(request,response,next){
-  response.render('services',{service: 'Service: ', alertStyle:'Danger'});
+  response.render('services',{service: 'Service: ', alertStyle:'Danger',
+  displayName: request.user ? request.user.displayName : ""});
 });
 
 

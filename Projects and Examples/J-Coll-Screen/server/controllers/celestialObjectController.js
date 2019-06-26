@@ -21,7 +21,8 @@ module.exports.displayCelestialObjectList = (request,response,next) => {
             //passing the title and celestialObjectList properties in the response object.
             response.render('celestialObjects/index',{
                 title: 'Celestial Object List',
-                celestialObjectList: celestialObjectList
+                celestialObjectList: celestialObjectList,
+                displayName: request.user ? request.user.displayName : ""
             });
         }
     });
@@ -88,7 +89,8 @@ module.exports.editCelestialObjectGET = (request,response,next) =>{
         }else{
             response.render('celestialObjects/edit',{
                 title:"Edit Celestial Object",
-                celestialObject: celestialObjectReturn
+                celestialObject: celestialObjectReturn,
+                displayName: request.user ? request.user.displayName : ""
             });
         }
     });

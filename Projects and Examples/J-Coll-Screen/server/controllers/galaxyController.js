@@ -12,7 +12,8 @@ module.exports.displayGalaxyList = (request,response,next) => {
         }else{
             response.render('galaxy/index',{
                 title: 'Galaxy List',
-                galaxyList: galaxyList
+                galaxyList: galaxyList,
+                displayName: request.user ? request.user.displayName : ""
             });
         }
     })
@@ -20,7 +21,8 @@ module.exports.displayGalaxyList = (request,response,next) => {
 
 module.exports.addGalaxyDisplay = (request,response,next) => {
     response.render('galaxy/add',{
-        title:'Add new Galaxy Object'
+        title:'Add new Galaxy Object',
+        displayName: request.user ? request.user.displayName : ""
     });
 }
 
@@ -57,7 +59,8 @@ module.exports.editGalaxyGET = (request,response,next) =>{
         }else{
             response.render('galaxy/edit',{
                 title:"Edit Galaxy Object",
-                galaxyObject: galaxyModelReturn
+                galaxyObject: galaxyModelReturn,
+                displayName: request.user ? request.user.displayName : ""
             })
         }
     });
