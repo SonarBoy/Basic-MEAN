@@ -1,0 +1,29 @@
+<% include ../partials/header.ejs %>
+<body>
+    <h1>Test</h1>
+
+    <!--Repetable Template Row-->
+    <% for (let count = 0; count < userList.length; count++) { %>
+        <div class="row mb-1 p-4">
+                <div class="col-md-12">
+                  <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative  ">
+                    <div class="col p-4 d-flex flex-column position-static rowItemMongo">
+                      <strong class="d-inline-block mb-2 text-primary">Planet</strong>
+                      <h3 class="mb-0"><%= userList[count].username %></h3>
+                      <p class="card-text mb-auto"><%= userList[count].Description %></p>
+                      <span class="span2">
+                      <a href="edit/<%= userList[count]._id%>" class="btn btn-primary">Edit</a>
+                      <a href="delete/<%= userList[count]._id%>" class="btn btn-danger">Delete</a>
+                      </span>
+                      <!--<a href="#" class="stretched-link">Continue reading</a>-->
+                    </div>
+                    <div class="col-auto d-none d-lg-block rowItemMongo">
+                    <img width="200" height="250" src="/images/Planets/<%= userList[count].Name %>.jpg" alt="..." class="img-thumbnail lineItem">    
+                    </div>
+                    
+                  </div>
+                </div>
+        </div>
+<% } %> 
+
+<% include ../partials/footer.ejs %>

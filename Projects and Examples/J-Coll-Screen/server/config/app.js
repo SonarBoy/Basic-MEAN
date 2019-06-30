@@ -14,7 +14,7 @@ var flash = require('connect-flash');
 
 //STEP 1: Inculde the Routes to be used for the function
 var indexRouter = require('../routes/index');
-var usersRouter = require('../routes/users-old');
+var usersRouter = require('../routes/usersRoute');
 var celestialObjectRouter = require('../routes/celestialObjects');
 var galaxyRouter = require('../routes/galaxyRouter');
 
@@ -78,6 +78,7 @@ app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/celestialObjects',celestialObjectRouter);
 app.use('/galaxy',galaxyRouter);
+app.use('/Users',usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

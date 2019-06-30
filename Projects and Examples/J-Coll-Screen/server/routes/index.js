@@ -28,7 +28,9 @@ router.get('/About',function(request,response,next){
   displayName: request.user ? request.user.displayName : ""});
 });
 
-router.get('/Projects',requireAuth ,function(request,response,next){
+
+//requireAuth ,
+router.get('/Projects',function(request,response,next){
   response.render('projects',{proj: 'Project: ', alertStyle:'Warn',
   displayName: request.user ? request.user.displayName : ""});
 });
