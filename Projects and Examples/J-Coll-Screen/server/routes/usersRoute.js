@@ -3,6 +3,12 @@ var router = express.Router();
 
 var usersRouter = require('../controllers/usersController');
 
-router.get('/Users',usersRouter.displayUsersList);
+router.get('/',function(req, res, next) {
+    res.redirect('/Users/ObjectList');
+}); 
+router.get('/ObjectList',usersRouter.displayUsersList);
+router.get('/delete/:id',usersRouter.deleteUser);
+router.get('/User-Add',usersRouter.addUserGet);
+router.post('/User-Add',usersRouter.addUserPost);
 
 module.exports = router;
