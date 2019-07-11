@@ -4,6 +4,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var userModel = require('../model/User');
 
+var email = require('../../email-Util');
 var passport = require('passport');
 
 //GET ALL USERS OF THE SITE.
@@ -84,4 +85,30 @@ module.exports.deleteUser = (request,response,next) => {
 }
 
 
+module.exports.forgotPasswordGet = (request,response,next) => {
+    response.render('users/forgotPassword',{
+        title: ''
+    });
+}
 
+
+module.exports.forgotPasswordPost = (request,response,next) =>{
+    userModel.User.findOne({email:request.body.email},(error,user) =>{
+
+        if(error){
+            console.log("Error");
+        }else{
+            console.log(user.email);
+
+            user.setPassword("test",(err, u) => {
+                if (err) return next(err);
+                u.save();
+                email.sendNotificationEmail(user.email,'This is a Test','Your password has been set to test');
+                response.status(200).json({ message: 'password change successful' });
+            });
+
+            
+        }
+    })
+
+}
