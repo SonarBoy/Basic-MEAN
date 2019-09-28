@@ -1,0 +1,94 @@
+Create Project:
+
+ng new (Project Name here).
+
+What this does:
++ a new workspace with the (Project Name) as the root
++ initial skeleton app located in the src folder
++ End to End (e2e) test project
++ related config files
+
+Serving up the application:
+cd (Project Name)
+
+ng serve --open
+
++ Starts the dev server and watches the source files
+  and rebuilds the app as you make changes to those
+  files.
+
++ The application Shell is the web page which is controlled
+  by the AppComponent.
+
+
+app.component.ts = the component class code
+app.component.html = the component template
+app.component.css = the components stylesheet
+
+{{}} = Angulars interpolation binding syntax
+
+
+=========================
+
+To generate new compoenets for your application
+
+ng generate component heros
+
+initial import to make things work in the TS file:
+import {Component, OnInit} from '@angular/core';
+
+@Component is a decorator function that specifies the Angular
+metadata for the component.
+
+selector - the components CSS element selector
+templateUrl - the location of the components template file
+styleUrls - the location of the components private CSS styleUrls
+
+ngOnInit() is a lifecycle hook here is where you put initialization
+logic
+
++ To display the HerosComponent you must add it to the template of the Shell
+AppComponent
++ remember app-heros is the element selector for the Heros Component
+so in app.component.html
+we add:
+
+<h1>{{title}}<h1>
+<app-heros></app-heros>
+
+we then make the following changes
+
+Create a class called
+src/app/hero.ts
+
+export class Hero {
+  id: number;
+  name: string;
+}
+
+we then modify our heroes.component.ts class to reflect the following
+
+import { Component, OnInit } from '@angular/core';
+import { Hero } from '../hero';
+
+@Component({
+  selector: 'app-heroes',
+  templateUrl: './heroes.component.html',
+  styleUrls: ['./heroes.component.css']
+})
+export class HeroesComponent implements OnInit {
+  hero: Hero = {
+    id: 1,
+    name: 'Windstorm'
+  };
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+
+this allows us to display data from our typescript file into the
+heros html template file.
