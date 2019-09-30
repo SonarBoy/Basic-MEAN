@@ -6,11 +6,14 @@ import {FormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+
+//Importing the heros component
 import { HerosComponent } from './heros/heros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    //Importing the heros component
     HerosComponent
   ],
   imports: [

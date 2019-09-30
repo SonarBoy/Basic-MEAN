@@ -27,8 +27,10 @@ app.component.css = the components stylesheet
 
 {{}} = Angulars interpolation binding syntax
 
-
-=========================
+================================================================================================================================
+================================================================================================================================
+================================================================================================================================
+================================================================================================================================
 
 To generate new compoenets for your application
 
@@ -89,6 +91,125 @@ export class HeroesComponent implements OnInit {
 
 }
 
-
 this allows us to display data from our typescript file into the
 heros html template file.
+
+Now lets say if we wanted to edit the heros name right in the web page how would we do this?
+We would first edit the heros.component.html to look something like this:
+
+<h2>{{hero.name}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div><span>name: </span>{{hero.name}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+  </label>
+</div>
+
+But note once you run this it would break the application. Why? because we have not imported the forms
+module into our main app.module.ts lets do that and see what it looks like.
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+//Forms module for inputting data
+import {FormsModule} from '@angular/forms';
+
+
+import { AppComponent } from './app.component';
+import { HerosComponent } from './heros/heros.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HerosComponent
+  ],
+  imports: [
+    BrowserModule,
+    //Importing of forms module here
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+Note the Commented lines with the // the lines below the comments are the imports to get this two way data binding working.
+[(ngModel)] is Angular's two-way data binding syntax.
+
+Here it binds the hero.name property to the HTML textbox so that data can flow in both directions:
+from the hero.name property to the textbox, and from the textbox back to the hero.name.
+
+
+================================================================================================================================
+================================================================================================================================
+================================================================================================================================
+================================================================================================================================
+
+In this section we will learn how to create a list and edit it.
+
+create a new file in your app folder called mock-heros.ts and populate it with the following:
+
+import {Hero} from './hero';
+
+export const HEROES: Hero[] =[
+  { id: 11, name: 'Dr Nice' },
+  { id: 12, name: 'Narco' },
+  { id: 13, name: 'Bombasto' },
+  { id: 14, name: 'Celeritas' },
+  { id: 15, name: 'Magneta' },
+  { id: 16, name: 'RubberMan' },
+  { id: 17, name: 'Dynama' },
+  { id: 18, name: 'Dr IQ' },
+  { id: 19, name: 'Magma' },
+  { id: 20, name: 'Tornado' }
+];
+
+We will then change the heros.component.ts to import the list of heros that we just created by the following:
+
+import { Component, OnInit } from '@angular/core';
+
+//Importing the mock heros file NOTE THE NAME USED FOR THE EXPORT MUST BE THE SAME AS THE IMPORT
+import { HEROES } from '../mock-heroes';
+
+@Component({
+  selector: 'app-heros',
+  templateUrl: './heros.component.html',
+  styleUrls: ['./heros.component.css']
+})
+export class HerosComponent implements OnInit {
+  //ASSINGMENT OF THE heroes to the exported HEROES file.
+  heroes = HEROES;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+Then in the heros.component.html paste this.
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+
+NOTE!! THE HEROES COLLECTION THAT YOU CREATED IN THE COMP.TS CLASS is CALLED IN THE HTML CLASS BY THE COLLECTION NAME "heroes"
+
+
+
+The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list.
+
+The syntax in this example is as follows:
+
+<li> is the host element.
+heroes holds the mock heroes list from the HeroesComponent class, the mock heroes list.
+hero holds the current hero object for each iteration through the list.
+
+
+ADDING A CLICK EVENT!!
+
