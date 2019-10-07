@@ -534,3 +534,124 @@ getHeroes(): Observable<Hero[]> {
   return of(HEROES);
 }
 
+we then go to the messages.component.ts and import the message service.
+
+import { MessageService } from '../message.service';
+
+
+we then modify the messages.component.ts's constructor to take in a message sent by
+our message service that we created.
+
+constructor(public messageService: MessageService) {}
+
+and finally edit the messages.component.html to reflect the following:
+
+<div *ngIf="messageService.messages.length">
+
+  <h2>Messages</h2>
+  <button class="clear"
+          (click)="messageService.clear()">clear</button>
+  <div *ngFor='let message of messageService.messages'> {{message}} </div>
+
+</div>
+
+================================================================================================================================
+================================================================================================================================
+================================================================================================================================
+================================================================================================================================
+
+Routing
+There are new requirements for the Tour of Heroes app:
+
+Add a Dashboard view.
+Add the ability to navigate between the Heroes and Dashboard views.
+When users click a hero name in either view, navigate to a detail view of the selected hero.
+When users click a deep link in an email, open the detail view for a particular hero.
+
+
+In angular the best practice is to load and configure the router in a sperate top-level module that is
+dedicated to routing and imported by the root AppModule.
+
+Run command to create routing module.
+ng generate module app-routing --flat --module=app
+
+--flat puts the file in src/app instead of its own folder
+--module=app tells the CLI to register it in the imports array of the app module
+
+Replace the content of the app-routing.module.ts
+with the following:
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HeroesComponent } from './heroes/heroes.component';
+
+const routes: Routes = [
+  { path: 'heroes', component: HeroesComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+First the AppRoutingModule imports the Router Module and Routes so the app can have
+routing functionality.
+
+We then import hte Heroes componenet and will give the Rotuer somewhere to go once you configure
+the routes.
+
+Routes
+
+The next par of your file is where you configure your Routes.
+
+imports: [ RouterModule.forRoot(routes) ],
+
+the above line adds the RouterModule to the AppRoutingModule import array and
+configures it with the routes in one step by calling RouterModule.forRoot();
+
+https://angular.io/api/router/RouterModule
+
+Next we export the Router module so it will be available throughout the app:
+exports: [ RouterModule ]
+
+we then add the Routers-outlet to our app.component.html template to work:
+<router-outlet></router-outlet>
+
+now you will not see anything come up but the app is being routed if you arr/heroes to the end of the
+URL in your browser that you are running you application in you will get to the heroes page.
+
+now we use the ng command to create a custom dashboard componenet:
+
+ng generate component dashboard
+
+
+
+The template presents a grid of hero name links.
+
+The *ngFor repeater creates as many links as are in the component's heroes array.
+The links are styled as colored blocks by the dashboard.component.css.
+The links don't go anywhere yet but they will shortly.
+The class is similar to the HeroesComponent class.
+
+It defines a heroes array property.
+The constructor expects Angular to inject the HeroService into a private heroService property.
+The ngOnInit() lifecycle hook calls getHeroes().
+
+now we still dont have a link to navigate to the dashboard component, the router need an appropriate
+route.
+
+add the following lines to the app-routing.module.ts
+
+import { DashboardComponent }   from './dashboard/dashboard.component';
+{ path: 'dashboard', component: DashboardComponent },
+
+When the app starts, the browser's address bar points to the web site's root. That doesn't match
+any existing route so the router doesn't navigate anywhere. The space below the <router-outlet> is blank.
+
+To make the app navigate to the dashboard automatically, add the following route to the
+AppRoutingModule.Routes array.
+
+
+
+
