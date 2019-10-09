@@ -652,6 +652,114 @@ any existing route so the router doesn't navigate anywhere. The space below the 
 To make the app navigate to the dashboard automatically, add the following route to the
 AppRoutingModule.Routes array.
 
+Navigating to hero details
+The HeroDetailsComponent displays details of a selected hero. At the moment the HeroDetailsComponent
+is only visible at the bottom of the HeroesComponent
+
+The user should be able to get to these details in three ways.
+
+By clicking a hero in the dashboard.
+By clicking a hero in the heroes list.
+By pasting a "deep link" URL into the browser address bar that identifies the hero to display.
+In this section, you'll enable navigation to the HeroDetailsComponent and liberate it from
+the HeroesComponent.
+
+First we import the HeroDetailComponent into the app-routing.module.ts
+import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
+
+We then modify the dashboard component to the following:
+<a *ngFor="let hero of heroes" class="col-1-4"
+    routerLink="/detail/{{hero.id}}">
+  <div class="module hero">
+    <h4>{{hero.name}}</h4>
+  </div>
+</a>
+
+Note the new routerLink attribute https://angular.io/api/router/RouterLink
 
 
+We then alter the heroes.component.html to the following:
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>
 
+note the new <a> tag with the router link to the details of the hero.
+
+Previously the HeroesComponent set the HeroDetailComponent.hero property and
+HeroDetailComponent displayed the hero.
+
+HeroesComponent doesn;t do that anymore. Now the router creates the HeroDetail
+Component in response to a URL such as ~/detail/11.
+
+the HeroDetailComponent needs a new way to obtain the hero-to-display. This section
+explains the following:
+- Get the route that created it
+- Extract the id from the route
+- Accquire the hero with that id from the server via the HeroService.
+
+in the hero-detail.component.ts we will add the follwing lines
+
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { HeroService }  from '../hero.service';
+
+constructor(
+  private route: ActivatedRoute,
+  private heroService: HeroService,
+  private location: Location
+) {}
+
+
+The AcivatedRoute holds information about the route to this instance of the HeroDetailComponent.
+This component is interested in the route's parameters extracted from the URL.
+The "id" parameter is the id of the hero to display.
+
+The HeroService gets hero data from the remote server nad this component will use it to get the
+hero-to-display.
+
+The location is an Angular service for interacting with the browser. You'll use it later to navigate
+back to the view that navigated here.
+
+We then add to the hero-detail.component the following:
+
+ngOnInit(): void {
+  this.getHero();
+}
+
+getHero(): void {
+  const id = +this.route.snapshot.paramMap.get('id');
+  this.heroService.getHero(id)
+    .subscribe(hero => this.hero = hero);
+}
+
+route.snapshot is a static image of the route information shortly
+after the component was created.
+
+the paramMap is a dictionary of route parameter values extracted
+from the URL. The "id" key return the id of the hero to fetch.
+
+Route parameters are always strings. the + operator converts the string to a number
+which is what a hero id should be.
+
+
+We then need to open the hero.service.ts and change the getHero method to the following:
+
+getHero(id: number): Observable<Hero> {
+  // TODO: send the message _after_ fetching the hero
+  this.messageService.add(`HeroService: fetched hero id=${id}`);
+  return of(HEROES.find(hero => hero.id === id));
+}
+
+Now also add a back button to the hero-detail.component.html
+
+<button (click)="goBack()">go back</button>
+
+add to the hero-detail.component.ts a goBack method:
+
+goBack(): void {
+  this.location.back();
+}

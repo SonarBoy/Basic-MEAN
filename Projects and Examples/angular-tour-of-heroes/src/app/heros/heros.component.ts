@@ -11,10 +11,12 @@ import { Hero } from '../hero';
 export class HerosComponent implements OnInit {
   heroes : Hero[];
 
+  /*
+  dead code
   selectedHero: Hero;
   onSelect(hero:Hero):void{
     this.selectedHero = hero;
-  }
+  }*/
 
   //private Hero service constructor
   constructor(private heroService: HeroService){
