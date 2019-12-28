@@ -1,0 +1,66 @@
+<% include ../partials/header.ejs %>
+<body>
+        <h1><%= title %></h1>
+
+        <div class="container row">
+            <div class="col-md-offset-3 col-md-6">
+                <form action="" class="form" method="POST">
+                    <div class="form-group"><label for="NameTextField">Object Name</label>
+                        <input type="text" class="form-control" id="FirstNameTextField" placeholder="Enter Object Name"
+                        name="Name"
+                        value="<%= galaxyObject.Name %>">
+                    </div>
+                    
+                    <div class="form-group"><label for="DesignationTextField">Designation</label>
+                        <input type="text" class="form-control" id="DesignationTextField" placeholder="Enter Object Designation"
+                        name="Designation"
+                        value="<%= galaxyObject.Designation %>">
+                    </div>
+                    <div class="form-group"><label for="TypeTextField">Type</label>
+                        <input type="text" class="form-control" id="TypeTextField" placeholder="Enter Object Type"
+                        name="Type"
+                        value="<%= galaxyObject.Type %>">
+                    </div>
+                    <div class="form-group"><label for="DiameterTextField">Diameter</label>
+                        <input type="text" class="form-control" id="DiameterTextField" placeholder="Enter Object Diameter"
+                        name="Diameter"
+                        value="<%= galaxyObject.Diameter %>">
+                    </div>
+                    
+                    <div class="form-group"><label for="DistanceFromEarthTextField">Distance From Earth</label>
+                        <input type="text" class="form-control" id="DistanceFromEarthTextField" placeholder="Enter Distance From Earth"
+                        name="DistanceFromEarth"
+                        value="<%= galaxyObject.DistanceFromEarth %>">
+                    </div>
+
+                    <div class="form-group"><label for="MassTextField">Mass</label>
+                        <input type="text" class="form-control" id="MassTextField" placeholder="Enter Object Mass"
+                        name="Mass"
+                        value="<%= galaxyObject.Mass %>">
+                    </div>
+
+                    <div class="form-group"><label for="ConstellationTextField">Constellation</label>
+                        <input type="text" class="form-control" id="ConstellationTextField" placeholder="Enter Object Constellation"
+                        name="Constellation"
+                        value="<%= galaxyObject.Constellation %>">
+                    </div>
+
+                    <div class="form-group"><label for="DiscoveredTextField">Discovered</label>
+                        <input type="text" class="form-control" id="DiscoveredTextField" placeholder="Enter Discovered Date"
+                        name="Discovered"
+                        value="<%= galaxyObject.Discovered %>">
+                    </div>
+                    
+                    <div class="form-group"><label for="StarsTextField">Stars</label>
+                        <input type="text" class="form-control" id="StarsTextField" placeholder="Enter Stars"
+                        name="Stars"
+                        value="<%= galaxyObject.Stars %>">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Add to Galaxy.</button>
+                </form>
+
+
+            </div>
+        </div>
+
+<% include ../partials/footer.ejs %>

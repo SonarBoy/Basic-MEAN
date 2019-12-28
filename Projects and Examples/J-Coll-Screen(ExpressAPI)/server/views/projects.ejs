@@ -1,0 +1,118 @@
+<% include ./partials/header.ejs %>
+<body>
+  
+
+    <h1><%= displayName %></h1>
+
+
+    <div class = "container">
+    <div class="row featurette">
+        <div class="col-md-7">
+          <h1 class="featurette-heading"><%= proj %> <span class="text-muted">Planets Example</span></h1>
+          <h2 class="lead">This is a simple Mongo pull that describes the planets in the Solar System.</h2>
+          
+          <% if (alertStyle == "Success") { %>
+            <div class="alert alert-success" role="alert">
+              <a href="" class="alert-link">...</a>
+            </div>
+          <% } else if(alertStyle == "Info") { %>
+          <div class="alert alert-info" role="alert">
+            <a href="#" class="alert-link">...</a>
+          </div>
+          <% } else if(alertStyle == "Warn") { %>
+          <div class="projectLink" role="alert">
+            <p ><a href="/Planets" class="alert-link"> &#9673; You can find the link here...</a></p>
+          </div>
+          <% } else if(alertStyle == "Danger") { %>
+          <div class="alert alert-danger" role="alert">
+            <a href="#" class="alert-link">...</a>
+          </div>
+          <% } %>
+
+        </div>
+        <div class="col-md-5">
+        <img width="500" height="500" src="/images/Planet-Flex.jpg" alt="Planets" class="img-thumbnail rounded lineItem">    
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h1 class="featurette-heading"><%= proj %> <span class="text-muted">Celestial Objects Example</span></h1>
+          <h2 class="lead">This is a simple Mongo pull that describes Celestial Objects.</h2>
+        
+          <% if (alertStyle == "Success") { %>
+            <div class="alert alert-success" role="alert">
+              <a href="#" class="alert-link">...</a>
+            </div>
+          <% } else if(alertStyle == "Info") { %>
+          <div class="alert alert-info" role="alert">
+            <a href="" class="alert-link">...</a>
+          </div>
+          <% } else if(alertStyle == "Warn") { %>
+          <div class="projectLink" role="alert">
+            <p><a href="celestialObjects/ObjectList" class="alert-link"> &#9673; You can find the link here...</a></p>
+          </div>
+          <% } else if(alertStyle == "Danger") { %>
+          <div class="alert alert-danger" role="alert">
+            <a href="#" class="alert-link">...</a>
+          </div>
+          <% } %>
+          
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img width="500" height="500" src="/images/CelestialObjects-Flex.jpg" alt="Planets" class="img-thumbnail rounded lineItem">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h1 class="featurette-heading"><%= proj %> <span class="text-muted">See for yourself.</span></h1>
+          <h2 class="lead">This is a simple Mongo pull that describes Galaxies</h2>
+          <% if (alertStyle == "Success") { %>
+            <div class="alert alert-success" role="alert">
+              <a href="#" class="alert-link">...</a>
+            </div>
+          <% } else if(alertStyle == "Info") { %>
+          <div class="alert alert-info" role="alert">
+            <a href="#" class="alert-link">...</a>
+          </div>
+          <% } else if(alertStyle == "Warn") { %>
+            <div class="projectLink" role="alert">
+              <p &#9673;><a href="galaxy/ObjectList" class="alert-link"> &#9673; You can find the link here...</a></p>
+            </div>
+          <% } else if(alertStyle == "Danger") { %>
+          <div class="alert alert-danger" role="alert">
+            <a href="#" class="alert-link">...</a>
+          </div>
+          <% } %>
+          
+        </div>
+        <div class="col-md-5 ">
+          
+          <img width="500" height="500" src="/images/Godentity.jpeg" alt="Planets" class="img-thumbnail lineItem">
+        </div>
+      </div>
+
+
+    <!--Bootstrap component Test-->
+    <!--<div class="alert alert-success" role="alert">
+    <a href="#" class="alert-link">...</a>
+    </div>
+    <div class="alert alert-info" role="alert">
+    <a href="#" class="alert-link">...</a>
+    </div>
+    <div class="alert alert-warning" role="alert">
+    <a href="#" class="alert-link">...</a>
+    </div>
+    <div class="alert alert-danger" role="alert">
+    <a href="#" class="alert-link">...</a>
+    </div> -->
+
+    </div>
+
+  <!--JAVASCRIPT-->
+  <% include ./partials/footer.ejs %>

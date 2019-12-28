@@ -1,0 +1,32 @@
+<% include ../partials/header.ejs %>
+<body>
+
+
+    <a class="btn btn-primary btn-lg" href="CelestialObjects-Add" role="button">Add to Celestial Objects.</a>
+
+    <!--Repetable Template Row-->
+    <% for (let count = 0; count < celestialObjectList.length; count++) { %>
+            <div class="row mb-1 p-4">
+                    <div class="col-md-12">
+                    <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+                        <div class="col p-4 d-flex flex-column position-static rowItemMongo">
+                        <strong class="d-inline-block mb-2 text-primary">Celestial Object:</strong>
+                        <h3 class="mb-0"><%= celestialObjectList[count].Name %></h3>
+                        <p class="card-text mb-auto"><%= celestialObjectList[count].Description %></p>
+                        <span class="span2">
+                        <a href="edit/<%= celestialObjectList[count]._id%>" class="btn btn-primary">Edit</a>
+                        <a href="delete/<%= celestialObjectList[count]._id%>" class="btn btn-danger">Delete</a>
+                        </span>
+                        <!--<a href="#" class="stretched-link">Continue reading</a>-->
+                        </div>
+                        <div class="col-auto d-none d-lg-block rowItemMongo">
+                        <img width="200" height="250" src="/images/celestialObjects/<%= celestialObjectList[count].Name %>.jpeg" alt="..." class="img-thumbnail lineItem">    
+                        </div>
+                        
+                    </div>
+                    </div>
+            </div>
+    <% } %> 
+
+</div>
+<% include ../partials/footer.ejs %>

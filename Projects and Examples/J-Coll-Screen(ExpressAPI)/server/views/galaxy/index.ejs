@@ -1,0 +1,40 @@
+<% include ../partials/header.ejs %>
+<body>
+    
+    <a class="btn btn-primary btn-lg" href="Galaxy-Add" role="button">Add to Galaxies</a>
+
+    <!--Repetable Template Row-->
+    <% for (let count = 0; count < galaxyList.length; count++) { %>
+            <div class="row mb-1 p-4">
+                    <div class="col-md-12">
+                    <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+                        <div class="col p-4 d-flex flex-column position-static rowItemMongo">
+                        <strong class="d-inline-block mb-2 text-primary">Celestial Object:</strong>
+                        <h1 class="mb-0"><%= galaxyList[count].Name %></h1>
+                        <br>
+                        <p class="card-text mb-auto">
+                        
+                            <span style="font-weight:bold">Designation:</span> <%= galaxyList[count].Designation %> <br>
+                            <span style="font-weight:bold">Type:</span>Type:    <%= galaxyList[count].Type %> <br>
+                            <span style="font-weight:bold">Diameter:</span> <%= galaxyList[count].Diameter %> <br>
+                            <span style="font-weight:bold">DistanceFromEarth:</span> <%= galaxyList[count].DistanceFromEarth %> <br>
+                            <span style="font-weight:bold">Mass:</span> <%= galaxyList[count].Mass %> <br>
+                            <span style="font-weight:bold">Constellation:</span> <%= galaxyList[count].Constellation %> <br>
+                            <span style="font-weight:bold">Discovered:</span> <%= galaxyList[count].Discovered %> <br>
+                            <span style="font-weight:bold">Stars:</span> <%= galaxyList[count].Stars %> </p>
+                        <span class="span2">
+                        <a href="edit/<%= galaxyList[count]._id%>" class="btn btn-primary">Edit</a>
+                        <a href="delete/<%= galaxyList[count]._id%>" class="btn btn-danger">Delete</a>
+                        </span>
+                        </div>
+                        
+                        <img width="200" height="250" src="/images/celestialObjects/<%= galaxyList[count].Name %>.jpeg" alt="..." class="rowItemMongo img-responsive img-thumbnail lineItem">    
+                        
+                        
+                    </div>
+                    </div>
+            </div>
+    <% } %> 
+
+</div>
+<% include ../partials/footer.ejs %>
