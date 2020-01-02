@@ -61,9 +61,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
-app.get('*',(request,response) =>{
-  res.sendFile(path.join(__dirname, '../../public/index.html'));
-});
+//app.get('*',(request,response) =>{
+//  response.sendFile(path.join(__dirname, '../../public/index.html'));
+//});
+
+//REMOVE WHEN READY
+//app.get('*',(request,response) =>{
+//  response.sendFile(path.join(__dirname, '../../public/index.html'));
+//});
 
 
 app.use(cors());
