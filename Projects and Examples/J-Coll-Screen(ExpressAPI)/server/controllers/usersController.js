@@ -56,17 +56,22 @@ module.exports.addUserPost = (request, response, next) =>{
 
             if(error){
                 console.log('Error: Inserting New User');
+                console.log(error);
 
                 if(error.name == "UserExistsError"){
                     request.flash('registerMessage','Registration Error: User Already Exists');
                     console.log('Registration Error: User Already exists');
                 }
 
+
+                return error;
+                /*
                 return response.render('',{
                     title:"Register",
                     message: request.flash('registerMessage'),
                     displayName: request.user ? request.user.displayName : ""
                 });
+                */
             }else{
 
 
@@ -93,7 +98,7 @@ module.exports.deleteUser = (request,response,next) => {
         if(error){
             console.log(error);
         }else{
-            response.redirect('../ObjectList');
+            response.redirect('../');
         }
     });
 }
