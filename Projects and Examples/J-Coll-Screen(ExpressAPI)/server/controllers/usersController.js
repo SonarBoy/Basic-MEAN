@@ -90,6 +90,36 @@ module.exports.addUserPost = (request, response, next) =>{
 }
 
 
+module.exports.editUser = (request,response,next) =>{
+    
+    let id = request.params.id;
+
+    let updatedUser = userModel({
+        "_id": id,
+        "username": request.body.username,
+        "email": request.body.email,
+        "displayName": request.body.displayName,
+        "created":Date.now,
+        "updated":Date.now,
+    },{});
+
+    userModel.update({_id: id}, updatedUser, (error) =>{
+        if(error){
+            console.log(error);
+            response.end(error);
+        }else{
+            response.json({success:true,msg:"Successfully editited new contact!"});
+        }
+    });
+}
+
+
+
+
+
+
+
+
 module.exports.deleteUser = (request,response,next) => {
     let id = request.params.id;
 
@@ -102,6 +132,8 @@ module.exports.deleteUser = (request,response,next) => {
         }
     });
 }
+
+
 
 
 module.exports.forgotPasswordGet = (request,response,next) => {

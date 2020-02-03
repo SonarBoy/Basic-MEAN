@@ -41,5 +41,4 @@ var options =({
 //Allowing passport to plugin to the mongoose database.
 UserSchema.plugin(passportLocalMongoose, options);
 
-
 module.exports.User = mongoose.model('Users',UserSchema);
