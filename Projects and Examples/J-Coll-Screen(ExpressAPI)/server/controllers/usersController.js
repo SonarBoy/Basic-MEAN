@@ -42,8 +42,9 @@ module.exports.addUserGet = (request,response,next) => {
 }
 
 module.exports.addUserPost = (request, response, next) =>{
-    let newUser = new userModel.User({
+    var newUser = new userModel.User({
         username: request.body.username,
+        //password: request.body.password
 
         email: request.body.email,
         displayName: request.body.displayName
@@ -75,7 +76,7 @@ module.exports.addUserPost = (request, response, next) =>{
             }else{
 
 
-                response.json({success:true,msg:"Successfully added new contact!"});
+                response.json({success:true,msg:"Successfully added new contact! " + request.body.password});
                 /*
                 return passport.authenticate('local')(request,response, () =>{
                     response.redirect('/Users/ObjectList');
@@ -99,6 +100,7 @@ module.exports.editUser = (request,response,next) =>{
         "username": request.body.username,
         "email": request.body.email,
         "displayName": request.body.displayName,
+        "password":request.body.password,
         "created":Date.now,
         "updated":Date.now,
     },{});

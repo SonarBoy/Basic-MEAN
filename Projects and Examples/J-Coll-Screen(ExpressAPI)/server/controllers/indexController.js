@@ -41,10 +41,12 @@ module.exports.processLoginPage = (request,response,next) =>{
                 return next(error);
             }
 
+            
+
             if(!user){
 
-                return response.json({success: false,msg: 'Failed to Log in'});
-                //return response.redirect('/login');
+                return response.json({success: false,msg: 'Failed to Log in',user: user});
+                
             }
 
             request.logIn(user, (err) => {

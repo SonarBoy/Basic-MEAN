@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var planetController = require('../controllers/planetController');
+var indexController = require('../controllers/indexController');
 
 var passport = require('passport');
 
@@ -9,6 +9,8 @@ var jwt = require("jsonwebtoken");
 
 
 //CHECKING TO SEE IF THE LOGIN IS PRESENT.
+
+/*
 function requireAuth(request,response,next){
   console.log(request.user);
   //check to see if the user is logged in.
@@ -18,6 +20,8 @@ function requireAuth(request,response,next){
   next();
   
 }
+
+*/
 
 
 
@@ -51,16 +55,16 @@ router.get('/Services',function(request,response,next){
 //router.get('/login',planetController.displayLoginPage);
 
 //post request to process login
-router.post('/login',planetController.processLoginPage);
+router.post('/login',indexController.processLoginPage);
 
 //display user registration page.
 //router.get('/register',planetController.displayRegisterPage);
 
 //post request to process the user registration
-router.post('/register',planetController.processRegisterPage);
+router.post('/register',indexController.processRegisterPage);
 
 //get request to peform user logout
-router.get('/logout',planetController.performLogout);
+router.get('/logout',indexController.performLogout);
 
 module.exports = router;
 
