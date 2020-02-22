@@ -8,6 +8,8 @@ router.get('/',usersRouter.displayUsersList);
 router.get('/delete/:id',usersRouter.deleteUser);
 router.get('/add',usersRouter.addUserGet);
 router.post('/add',usersRouter.addUserPost);
+
+router.get('/edit/:id',usersRouter.addUserGet);
 router.post('/edit/:id',usersRouter.editUser);
 
 

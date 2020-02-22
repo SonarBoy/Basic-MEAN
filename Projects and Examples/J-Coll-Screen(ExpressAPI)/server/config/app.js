@@ -106,6 +106,7 @@ passport.deserializeUser(User.deserializeUser());
 // NEW JWT STRATEGY
 var jwtOptions = {};
 jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderWithScheme('JWT');
+//jwtOptions.jwtFromRequest = ExtractJWT.fromHeader("authorization");
 jwtOptions.secretOrKey = db.secret;
 
 var strategy = new JWTStrategy(jwtOptions,(jwt_payload,done) => {
@@ -128,21 +129,9 @@ passport.use(strategy);
 //TODO protect this section.
 
 app.use('/api', indexRouter);
-//app.use('/users', usersRouter);
 app.use('/api/celestialObjects',celestialObjectRouter);
 app.use('/api/galaxy',galaxyRouter);
-app.use('/api/Users',usersRouter);
-
-
-
-/*
-app.use('/', indexRouter);
-app.use('/Planets',planetRouter);
-//app.use('/users', usersRouter);
-app.use('/celestialObjects',celestialObjectRouter);
-app.use('/galaxy',galaxyRouter);
-app.use('/Users',usersRouter);
-*/
+app.use('/api/Users',passport.authenticate('jwt',{session:false}),usersRouter);
 
 
 // TODO CAPTURE RANDOM LINKS

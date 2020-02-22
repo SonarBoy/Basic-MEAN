@@ -76,7 +76,7 @@ module.exports.addUserPost = (request, response, next) =>{
             }else{
 
 
-                response.json({success:true,msg:"Successfully added new contact! " + request.body.password});
+                response.json({success:true,msg:"Successfully added new contact! "});
                 /*
                 return passport.authenticate('local')(request,response, () =>{
                     response.redirect('/Users/ObjectList');
@@ -95,7 +95,7 @@ module.exports.editUser = (request,response,next) =>{
     
     let id = request.params.id;
 
-    let updatedUser = userModel({
+    let updatedUser = new userModel.User({
         "_id": id,
         "username": request.body.username,
         "email": request.body.email,
